@@ -162,20 +162,31 @@
         <a href="https://www.linkedin.com/in/luis-miguel-galacho" target="_blank" class="btn">Conectar en LinkedIn</a>
     </div>
     <script>
-        // JS: Seleccionamos el botón y el cuerpo de la página
-        const toggleButton = document.getElementById('theme-toggle');
+            const toggleButton = document.getElementById('theme-toggle');
         const body = document.body;
 
-        // Escuchamos cuando el usuario hace clic en el botón
+        // 1. Al cargar la página, comprobamos si el usuario ya había elegido el modo oscuro antes
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.textContent = '☀️ Modo Claro';
+        } else {
+            body.classList.remove('dark-mode');
+            toggleButton.textContent = '🌙 Modo Oscuro';
+        }
+
+        // 2. Escuchamos el clic del botón para cambiar el modo y guardar la decisión
         toggleButton.addEventListener('click', () => {
-            // El método 'toggle' añade la clase si no está, o la quita si ya está
             body.classList.toggle('dark-mode');
             
-            // Cambiamos el texto del botón según el modo activo
+            // Comprobamos qué modo se acaba de activar y lo guardamos en la memoria del navegador
             if (body.classList.contains('dark-mode')) {
                 toggleButton.textContent = '☀️ Modo Claro';
+                localStorage.setItem('theme', 'dark'); // Guarda "dark"
             } else {
                 toggleButton.textContent = '🌙 Modo Oscuro';
+                localStorage.setItem('theme', 'light'); // Guarda "light"
             }
         });
     </script>
