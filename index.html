@@ -89,7 +89,7 @@
         /* Estilos del botón flotante */
         .theme-btn {
             position: fixed;
-            top: 20px;
+            top: 180px;
             right: 20px;
             background: #24292e;
             color: white;
@@ -241,46 +241,66 @@
     </style>
 </head>
 <body>
-<!-- Botón flotante para cambiar de modo -->
-    <button id="theme-toggle" class="theme-btn">🌙 Modo Oscuro</button>
 
-    <!-- HTML: La estructura de tu página -->
-    <div class="card">
-        <h1>Hola, soy Luis Miguel Galacho</h1>
-        <p class="subtitle">Estudiante y Entusiasta Tecnológico</p>
-        
-        <p>Bienvenido a mi laboratorio en GitHub. Esta página web está viva y crecerá a medida que evolucione mi experiencia estudiantil y profesional en el mundo del desarrollo de software e informática.</p>
-        
-        <p>🛠️ Actualmente construyendo proyectos, subiendo código y rompiendo el algoritmo.</p>
-
-        <!-- Sección de Habilidades Técnicas con Iconos -->
-        <h2 style="font-size: 18px; margin-top: 25px; text-align: left; color: inherit;">🛠️ Tecnologías en mi Radar</h2>
-        <div class="skills-container">
-            <span class="skill-badge"><i class="devicon-html5-plain colored"></i> HTML5</span>
-            <span class="skill-badge"><i class="devicon-css3-plain colored"></i> CSS3</span>
-            <span class="skill-badge"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
-            <span class="skill-badge"><i class="devicon-git-plain colored"></i> Git & GitHub</span>
-            <span class="skill-badge"><i class="devicon-markdown-original"></i> Markdown</span>
+    <!-- 1. AQUÍ ESTÁ LO QUE FALTABA: Cabecera fotográfica y Barra de Navegación Fija -->
+    <header class="main-header">
+        <div class="hero-bg">
+            <!-- Imagen abstracta tecnológica -->
+            <img src="https://images.unsplash.com/photo-1644088379091-d574269d422f?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tech Header">
         </div>
+        <nav class="nav-bar">
+            <span class="nav-logo">🚀 LMGCH.dev</span>
+            <div class="nav-links">
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#tecnologias">Tecnologías</a>
+                <a href="#proyectos">Proyectos</a>
+            </div>
+        </nav>
+    </header>
 
-        <!-- Sección de Proyectos -->
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>🚀 Grazalema Resiliente</h3>
-                <p>Un proyecto desarrollado en HTML centrado en la resiliencia y gestión de datos locales.</p>
-                <a href="https://github.com/LMGCH/grazalema-resiliente" target="_blank" class="project-link">Ver repositorio ↗</a>
+    <!-- Botón flotante para cambiar de modo -->
+    <button id="theme-toggle" class="theme-btn">🌙 Modo Oscuro</button> 
+
+    <!-- 2. Envolvemos tu tarjeta en la clase "main-content" para que respete el espacio superior -->
+    <main class="main-content">
+        <div class="card" id="sobre-mi">
+            <h1>Hola, soy Luis Miguel Galacho</h1>
+            <p class="subtitle">Estudiante y Entusiasta Tecnológico</p>
+            
+            <p>Bienvenido a mi laboratorio en GitHub. Esta página web está viva y crecerá a medida que evolucione mi experiencia estudiantil y profesional en el mundo del desarrollo de software e informática.</p>
+            
+            <p>🛠️ Actualmente construyendo proyectos, subiendo código y rompiendo el algoritmo.</p>
+            
+            <!-- Sección de Habilidades Técnicas con Iconos -->
+            <h2 id="tecnologias" style="font-size: 18px; margin-top: 25px; text-align: left; color: inherit;">🛠️ Tecnologías en mi Radar</h2>
+            <div class="skills-container">
+                <span class="skill-badge"><i class="devicon-html5-plain colored"></i> HTML5</span>
+                <span class="skill-badge"><i class="devicon-css3-plain colored"></i> CSS3</span>
+                <span class="skill-badge"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                <span class="skill-badge"><i class="devicon-git-plain colored"></i> Git & GitHub</span>
+                <span class="skill-badge"><i class="devicon-markdown-original"></i> Markdown</span>
             </div>
             
-            <div class="project-card">
-                <h3>💻 Mi Web Personal</h3>
-                <p>Este mismo CV dinámico desarrollado desde cero para documentar mi evolución tech.</p>
-                <a href="https://github.com/LMGCH/LMGCH.github.io" target="_blank" class="project-link">Ver código fuente ↗</a>
+            <!-- Sección de Proyectos -->
+            <h2 id="proyectos" style="font-size: 18px; margin-top: 25px; text-align: left; color: inherit;">📁 Proyectos Recientes</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>🚀 Grazalema Resiliente</h3>
+                    <p>Un proyecto desarrollado en HTML centrado en la resiliencia y gestión de datos locales.</p>
+                    <a href="https://github.com/LMGCH/grazalema-resiliente" target="_blank" class="project-link">Ver repositorio ↗</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>💻 Mi Web Personal</h3>
+                    <p>Este mismo CV dinámico desarrollado desde cero para documentar mi evolución tech.</p>
+                    <a href="https://github.com/LMGCH/LMGCH.github.io" target="_blank" class="project-link">Ver código fuente ↗</a>
+                </div>
             </div>
+            
+            <a href="https://www.linkedin.com/in/luis-miguel-galacho" target="_blank" class="btn" style="margin-top: 30px;">Conectar en LinkedIn</a>
         </div>
+    </main>
 
-        <!-- Cambia este enlace por el tuyo real de LinkedIn cuando quieras -->
-        <a href="https://www.linkedin.com/in/luis-miguel-galacho" target="_blank" class="btn">Conectar en LinkedIn</a>
-    </div>
     <script>
             const toggleButton = document.getElementById('theme-toggle');
         const body = document.body;
