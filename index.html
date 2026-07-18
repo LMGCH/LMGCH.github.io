@@ -48,6 +48,41 @@
         .btn:hover {
             background-color: #2ea44f;
         }
+                /* Diseño para la cuadrícula de proyectos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 25px;
+            text-align: left;
+        }
+        .project-card {
+            background: #f8f9fa;
+            border-left: 4px solid #2ea44f; /* Borde verde como tus contribuciones */
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .project-card h3 {
+            margin: 0 0 5px 0;
+            color: #24292e;
+            font-size: 16px;
+        }
+        .project-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #586069;
+        }
+        .project-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 13px;
+            color: #0366d6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .project-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -60,6 +95,20 @@
         <p>Bienvenido a mi laboratorio en GitHub. Esta página web está viva y crecerá a medida que evolucione mi experiencia estudiantil y profesional en el mundo del desarrollo de software e informática.</p>
         
         <p>🛠️ Actualmente construyendo proyectos, subiendo código y rompiendo el algoritmo.</p>
+        <!-- Sección de Proyectos -->
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>🚀 Grazalema Resiliente</h3>
+                <p>Un proyecto desarrollado en HTML centrado en la resiliencia y gestión de datos locales.</p>
+                <a href="https://github.com" target="_blank" class="project-link">Ver repositorio ↗</a>
+            </div>
+            
+            <div class="project-card">
+                <h3>💻 Mi Web Personal</h3>
+                <p>Este mismo CV dinámico desarrollado desde cero para documentar mi evolución tech.</p>
+                <a href="https://github.com" target="_blank" class="project-link">Ver código fuente ↗</a>
+            </div>
+        </div>
 
         <!-- Cambia este enlace por el tuyo real de LinkedIn cuando quieras -->
         <a href="www.linkedin.com/in/luis-miguel-galacho" target="_blank" class="btn">Conectar en LinkedIn</a>
