@@ -83,9 +83,54 @@
         .project-link:hover {
             text-decoration: underline;
         }
+        /* Estilos del botón flotante */
+        .theme-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #24292e;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .theme-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilos que se aplicarán cuando el Modo Oscuro esté activo */
+        body.dark-mode {
+            background-color: #0d1117; /* El negro azulado oficial de GitHub Dark */
+            color: #c9d1d9;
+        }
+        body.dark-mode .card {
+            background-color: #161b22;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        body.dark-mode h1, body.dark-mode .project-card h3 {
+            color: #f0f6fc;
+        }
+        body.dark-mode .project-card {
+            background-color: #21262d;
+            border-left-color: #58a6ff; /* El borde cambia a azul eléctrico */
+        }
+        body.dark-mode .project-link {
+            color: #58a6ff;
+        }
+        body.dark-mode .btn {
+            background-color: #21262d;
+            border: 1px solid #30363d;
+        }
+
     </style>
 </head>
 <body>
+    <!-- Botón flotante para cambiar de modo -->
+    <button id="theme-toggle" class="theme-btn">🌙 Modo Oscuro</button>
 
     <!-- HTML: La estructura de tu página -->
     <div class="card">
@@ -113,6 +158,24 @@
         <!-- Cambia este enlace por el tuyo real de LinkedIn cuando quieras -->
         <a href="https://www.linkedin.com/in/luis-miguel-galacho" target="_blank" class="btn">Conectar en LinkedIn</a>
     </div>
+    <script>
+        // JS: Seleccionamos el botón y el cuerpo de la página
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Escuchamos cuando el usuario hace clic en el botón
+        toggleButton.addEventListener('click', () => {
+            // El método 'toggle' añade la clase si no está, o la quita si ya está
+            body.classList.toggle('dark-mode');
+            
+            // Cambiamos el texto del botón según el modo activo
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '☀️ Modo Claro';
+            } else {
+                toggleButton.textContent = '🌙 Modo Oscuro';
+            }
+        });
+    </script>
 
 </body>
 </html>
