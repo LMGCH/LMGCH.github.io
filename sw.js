@@ -14,9 +14,8 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('📦 Almacenando esqueleto HTML inmune...');
-        // Usamos rutas absolutas limpias para evitar confusiones con las almohadillas (#) del menú
-        return cache.addAll(['/index.html']);
+        console.log('📦 Guardando recursos locales de la PWA en caché...');
+        return cache.addAll(ASSETS_TO_CACHE);
       })
       .then(() => self.skipWaiting())
   );
