@@ -1,165 +1,111 @@
-# 👋 Hola, soy Luis Miguel Galacho
+# 🚀 LMGCH.dev | CV Interactivo & Portfolio Resiliente
 
-> "Construyo proyectos para aprender, documento lo que aprendo y comparto el proceso."
+<p align="center">
+  <img src="./icon-192.png" alt="LMGCH Logo" width="80" height="80" style="border-radius: 12px;"/>
+</p>
+
+<p align="center">
+  <strong>👋 Hola, soy Luis Miguel Galacho</strong><br>
+  <em>"Construyo proyectos para aprender, documento lo que aprendo y comparto el proceso."</em>
+</p>
+
+<p align="center">
+  <img src="https://shields.io" alt="PWA">
+  <img src="https://shields.io" alt="Service Worker">
+  <img src="https://shields.io" alt="Umami">
+  <img src="https://shields.io" alt="Status">
+</p>
+
+---
 
 Este repositorio contiene mi **CV interactivo**, desarrollado como una aplicación web moderna donde mi currículum, portfolio técnico y laboratorio de experimentación conviven en un único proyecto.
 
-No quería otro PDF.
-No busco demostrar que lo sé todo. Busco demostrar que soy capaz de aprender, construir y mejorar continuamente..
-Learning. Building. Documenting. Improving.
+> 💡 *No quería otro PDF. No busco demostrar que lo sé todo. Busco demostrar que soy capaz de aprender, construir y mejorar continuamente.* **Learning. Building. Documenting. Improving.**
+
+## 🎯 ¿Qué encontrarás?
+* 📁 **Portfolio Técnico**: Mis proyectos de desarrollo y laboratorio de red de un vistazo.
+* 💻 **CV Interactivo**: Navegación fluida y adaptada a dispositivos móviles.
+* 📲 **Progressive Web App (PWA)**: Aplicación instalable nativamente en smartphones y escritorio.
+* ⚡ **Simulador ATS para Currículums**: Un motor sutil en JavaScript para evaluar palabras clave críticas.
+* 🌙 **Modo Oscuro Persistente**: Sistema elástico de iluminación adaptado a la preferencia del usuario.
+* 📊 **Analítica Respetuosa**: Métricas en tiempo real que no violan la privacidad (Umami).
+* 🛠️ **Código Vanilla**: Construido con HTML/CSS/JavaScript puro, **sin frameworks**, garantizando rendimiento bruto.
 
 ---
 
-## ¿Qué encontrarás?
+## 🛠️ Tecnologías y Arquitectura
 
-✔ Portfolio técnico
-
-✔ CV interactivo
-
-✔ Progressive Web App (PWA)
-
-✔ Simulador ATS para currículums
-
-✔ Modo oscuro persistente
-
-✔ Diseño responsive
-
-✔ Animaciones JavaScript
-
-✔ Analítica respetuosa con la privacidad (Umami)
-
-✔ Código HTML/CSS/JavaScript sin frameworks
+| Capa de Desarrollo | Tecnologías Empleadas |
+| :--- | :--- |
+| **Frontend Core** | HTML5, CSS3, JavaScript (Vanilla) |
+| **Resiliencia & Offline** | Service Workers (v17), Cache Storage API, `manifest.json` |
+| **Estilos & Iconografía** | Devicon CDN (`jsDelivr`), Diseños elásticos CSS |
+| **Métricas & UX** | Umami Analytics, LocalStorage para persistencia de modo |
+| **Despliegue & CI** | GitHub Pages, Git |
 
 ---
 
-## Tecnologías
+## 🎯 Objetivo del Proyecto
+Este proyecto nace con una idea sencilla: **Un desarrollador junior no debería limitarse a decir lo que sabe hacer. Debe demostrarlo.**
 
-- HTML5
-- CSS3
-- JavaScript
-- Git
-- GitHub Pages
-- Devicon
-- Progressive Web Apps
-- Service Workers
-- LocalStorage
-- Umami Analytics
+Por ello decidí convertir mi CV en un proyecto real, donde cualquier persona pueda revisar de primera mano:
+* 🏗️ Arquitectura de red interna y Service Workers.
+* 🧹 Organización del DOM y estilo de código limpio.
+* 🎨 Experiencia de usuario (UX/UI) adaptativa.
+* 🛡️ Ciberseguridad y aislamiento en ejecución (*sandbox*).
+* 📈 Evolución y documentación ágil.
 
 ---
 
-## Objetivo del proyecto
+## 🚀 Características Principales
 
-Este proyecto nace con una idea sencilla:
+### 🔄 CV Vivo y Evolutivo
+Este portfolio progresa junto con mi aprendizaje. Cada nuevo proyecto, infraestructura, tecnología o certificación pasa a formar parte inmediata del esqueleto del sitio.
 
-> Un desarrollador junior no debería limitarse a decir lo que sabe hacer.
+### ⚡ Simulador ATS (Applicant Tracking Systems)
+Incluye un pequeño motor desarrollado en JavaScript que estima la compatibilidad de un perfil técnico con sistemas ATS mediante la densidad de palabras clave críticas y recomendadas. 
+* *Nota: Su objetivo no es sustituir herramientas profesionales, sino explicar de forma lúdica y didáctica cómo operan los filtros automáticos de recursos humanos antes de llegar al Tech Lead.*
 
-Debe demostrarlo.
+### 📡 PWA (Progressive Web App) e Inmunidad Offline
+Gracias al uso coordinado de un manifiesto y un Service Worker que actúa como interceptor de red proxy local, la web es completamente instalable. Si el usuario se queda sin conexión (por ejemplo, en el metro o en modo avión), el sitio web cargará instantáneamente en menos de 0ms extrayendo los recursos esenciales directamente de su propio almacenamiento en caché.
 
-Por ello decidí convertir mi CV en un proyecto real, donde cualquier persona pueda revisar:
-
-- arquitectura
-- organización
-- estilo de código
-- experiencia de usuario
-- accesibilidad
-- evolución del proyecto
-- documentación
-
-Todo desde un único repositorio.
+### 🛡️ Compromiso de Privacidad y Seguridad
+No se utilizan cookies de seguimiento abusivas de terceros. Las analíticas se ejecutan mediante Umami, una alternativa de código abierto que no almacena datos personales. El código se ejecuta de forma aislada, garantizando que no se descargan archivos ejecutables en el sistema.
 
 ---
 
-## Características
-
-### CV vivo
-
-Este portfolio evoluciona junto con mi aprendizaje.
-
-Cada nuevo proyecto, tecnología o certificación pasa a formar parte del sitio.
-
----
-
-### Simulador ATS
-
-Incluye un pequeño motor desarrollado en JavaScript que estima la compatibilidad de un perfil técnico con sistemas ATS mediante palabras clave.
-
-No pretende sustituir herramientas profesionales.
-
-Su objetivo es explicar de forma sencilla cómo funcionan muchos filtros automáticos de selección.
+## 📡 Enfoque Técnico e Investigación
+Actualmente estoy orientando mi aprendizaje técnico de cara al futuro hacia:
+* 🔌 Despliegue de Redes y Comunicaciones Críticas (MCX / 5G Sidelink).
+* 🛡️ Sistemas resilientes de alta disponibilidad frente a fallos catastróficos.
+* 🧠 Orquestación de Inteligencia Artificial Local (Modelos Open Source).
+* ⚙️ Automatización e Infraestructuras Críticas.
 
 ---
 
-### PWA
-
-La aplicación puede instalarse como aplicación nativa gracias al uso de:
-
-- manifest.json
-- Service Worker
-- cache offline
-
----
-
-### Privacidad
-
-No se utilizan cookies de seguimiento.
-
-La analítica se realiza mediante Umami, una alternativa open source orientada a la privacidad.
+## 🚀 Próximas Mejoras (Backlog)
+- [ ] 🌐 Internacionalización completa (ES/EN).
+- [ ] ⚡ Optimización extrema en Lighthouse (100/100).
+- [ ] 🎨 Accesibilidad avanzada bajo pautas WCAG.
+- [ ] 🧪 Tests unitarios automatizados para el motor ATS.
+- [ ] 🔄 Integración y despliegue continuo (CI/CD con GitHub Actions).
+- [ ] ✍️ Creación de un blog técnico nativo offline.
 
 ---
 
-## Enfoque técnico
+## 📬 Contacto & Redes
 
-Actualmente estoy orientando mi aprendizaje hacia:
+Si deseas revisar mi código, conectar profesionalmente o proponer una colaboración, puedes encontrarme en:
 
-- Redes
-- Sistemas resilientes
-- Comunicaciones MCX
-- Infraestructuras críticas
-- Alta disponibilidad
-- Automatización
-- IA Local
+* **GitHub:** [github.com/LMGCH](https://github.com/LMGCH)
+* **LinkedIn:** [linkedin.com/in/luis-miguel-galacho](https://linkedin.com/in/luis-miguel-galacho)
 
 ---
 
-## Filosofía
+<p align="center">
+  <em>Si has llegado hasta aquí... ¡Muchas gracias por dedicar unos minutos a revisar mi trabajo! 🤝</em>
+</p>
 
-Creo que GitHub debería mostrar mucho más que repositorios.
-
-Debe mostrar:
-
-- curiosidad
-- disciplina
-- capacidad de aprender
-- documentación
-- mejora continua
-
-Este repositorio representa precisamente eso.
-
----
-
-## Próximas mejoras
-
-- [ ] Internacionalización (ES/EN)
-- [ ] Lighthouse 100/100
-- [ ] Accesibilidad WCAG
-- [ ] Tests automatizados
-- [ ] Integración CI/CD
-- [ ] Más proyectos interactivos
-- [ ] Blog técnico
-
----
-
-## Contacto
-
-GitHub
-
-https://github.com/LMGCH
-
-LinkedIn
-
-https://linkedin.com/in/luis-miguel-galacho
-
----
 
 Si has llegado hasta aquí...
 
