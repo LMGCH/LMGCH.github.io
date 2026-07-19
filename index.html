@@ -280,7 +280,12 @@ html {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
-
+    /* Efecto dinámico al pasar el ratón sobre el botón de instalar PWA */
+#pwa-install-btn:hover {
+  transform: scale(1.05); /* Se agranda un 5% de forma elástica */
+  background-color: #2cbe4e !important; /* Cambia a un verde de éxito de GitHub más brillante */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4); /* La sombra se estira dando efecto de elevación */
+}
     </style>
 </head>
 <body>
@@ -450,7 +455,7 @@ html {
           </article>
     </main>
 <!-- Botón Flotante para Instalar la Aplicación PWA (Oculto al inicio) -->
-<button id="pwa-install-btn" style="display: none; position: fixed; bottom: 20px; left: 20px; background: #2ea44f; color: white; border: none; padding: 10px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 9999; transition: transform 0.2s;" data-umami-event="Instalar PWA App">
+<button id="pwa-install-btn" style="display: none; position: fixed; bottom: 20px; left: 20px; background: #2ea44f; color: white; border: none; padding: 10px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 9999; transition: all 0.2s ease;" data-umami-event="Instalar PWA App">
   📲 Instalar App LMGCH
 </button>
     <script>
