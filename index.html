@@ -394,6 +394,28 @@ html {
               <p id="ats-feedback" style="font-size: 13px; opacity: 0.9; margin: 0; line-height: 1.4;"></p>
             </div>
           </div>
+          <!-- Botón Desplegable para Leer la Guía Nátiva -->
+<button id="btn-toggle-guia" class="btn" style="margin-top: 15px; width: 100%; background: var(--border-color, rgba(255,255,255,0.1)); color: inherit; border: 1px solid var(--border-color, rgba(255,255,255,0.2)); cursor: pointer;" data-umami-event="Desplegar Guia Ruta TI">
+  📖 Leer Resumen Técnico de la Guía
+</button>
+
+<!-- Contenedor Oculto de la Guía (Acordeón) -->
+<div id="guia-content" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.1); border-radius: 8px; border-left: 3px solid #2ea44f; animation: fadeIn 0.3s ease;">
+  <h4 style="margin: 0 0 10px 0; font-size: 15px; color: inherit;">🗺️ La Ruta TI del Candidato Tech</h4>
+  
+  <div style="font-size: 13px; line-height: 1.5; opacity: 0.9;">
+    <p style="margin: 0 0 10px 0;"><strong>1. El Filtro del Algoritmo (ATS):</strong> Las herramientas de reclutamiento escanean tu currículum buscando palabras clave específicas de ingeniería. Si tu perfil no tiene una densidad del 60-70% de las tecnologías demandadas, el sistema te descarta automáticamente antes de que un humano te lea.</p>
+    
+    <p style="margin: 0 0 10px 0;"><strong>2. Captar al Tech Lead en 10 segundos:</strong> Los líderes técnicos no buscan descripciones largas, buscan hechos. Estructura tu experiencia usando la metodología STAR (Situación, Tarea, Acción, Resultado) y resalta el impacto tecnológico medible de tus proyectos.</p>
+    
+    <p style="margin: 0 0 10px 0;"><strong>3. El Control de Versiones es Rey:</strong> Para un perfil junior o estudiante, un perfil de GitHub activo y con commits estructurados (siguiendo estándares como <i>Conventional Commits</i>) demuestra más experiencia real que cualquier título teórico.</p>
+  </div>
+  
+  <p style="font-size: 12px; opacity: 0.7; margin: 10px 0 0 0; text-align: right; font-style: italic;">Contenido extraído de la guía original en PDF.</p>
+</div>
+
+                      
+                      
         </article>
         
       </div> 
@@ -550,7 +572,20 @@ function type() {
 document.addEventListener("DOMContentLoaded", () => {
   if (typingElement) setTimeout(type, 1000);
 });
-
+// --- CONTROL DEL DESPLEGABLE DE LA RUTA TI ---
+document.getElementById('btn-toggle-guia').addEventListener('click', function() {
+  const content = document.getElementById('guia-content');
+  const btn = document.getElementById('btn-toggle-guia');
+  
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    btn.innerHTML = '❌ Cerrar Resumen Técnico';
+  } else {
+    content.style.display = 'none';
+    btn.innerHTML = '📖 Leer Resumen Técnico de la Guía';
+  }
+});
+  
 </script>
 
 </body>
