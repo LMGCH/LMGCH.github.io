@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lmgch-resilient-v13'; // Subimos a la v13
+const CACHE_NAME = 'lmgch-resilient-v14'; // Subimos a la v14
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
