@@ -1,39 +1,30 @@
-const CACHE_NAME = 'lmgch-portfolio-v2'; // Incrementamos la versión para forzar la actualización
+const CACHE_NAME = 'lmgch-portfolio-v3'; // Nueva versión limpia
 const ASSETS_TO_CACHE = [
   './',
+  './index.html',
   'https://jsdelivr.net'
 ];
 
-// Imagen externa conflictiva por CORS
-const BANNER_IMAGE = 'https://unsplash.com';
-
-// Instalación: Guarda los recursos locales seguros primero
+// Instalación: Guarda SOLO los recursos locales estables
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('📦 Guardando recursos locales seguros...');
-        // Guardamos los recursos locales esenciales
-        cache.addAll(ASSETS_TO_CACHE);
-        
-        // Guardamos la imagen externa forzando el modo 'no-cors' para evitar el bloqueo del navegador
-        return cache.put(BANNER_IMAGE, new Response('', { status: 200, statusText: 'OK' }))
-          .catch(() => fetch(new Request(BANNER_IMAGE, { mode: 'no-cors' }))
-            .then(response => cache.put(BANNER_IMAGE, response))
-          );
+        console.log('📦 Guardando estructura base en caché resiliente...');
+        return cache.addAll(ASSETS_TO_CACHE);
       })
       .then(() => self.skipWaiting())
   );
 });
 
-// Activación: Limpieza automática de cachés obsoletas
+// Activación: Limpia de inmediato cualquier rastro de la caché rota anterior
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cache => {
           if (cache !== CACHE_NAME) {
-            console.log('🧹 Eliminando caché antigua:', cache);
+            console.log('🧹 Eliminando caché obsoleta:', cache);
             return caches.delete(cache);
           }
         })
@@ -42,21 +33,21 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Estrategia de Red: Cache First con caída a Red (Network Fallback)
+// Intercepción de Red de Alta Disponibilidad
 self.addEventListener('fetch', event => {
-  // Ignoramos peticiones que no sean GET (como analíticas POST de umami)
   if (event.request.method !== 'GET') return;
 
   event.respondWith(
     caches.match(event.request)
       .then(cachedResponse => {
+        // 1. Si el recurso está en la caché local, lo servimos de inmediato
         if (cachedResponse) {
-          return cachedResponse; // Devuelve el recurso desde la caché si existe
+          return cachedResponse;
         }
-        
-        // Si no está en caché, lo busca en la red de forma normal
+
+        // 2. Si no está en caché (como la imagen de Unsplash o las analíticas de Umami), intentamos ir a la red
         return fetch(event.request).then(networkResponse => {
-          // Si la petición es válida y de nuestro propio sitio, la metemos dinámicamente en la caché para la próxima vez
+          // Si la respuesta de red es válida y es de nuestra web, la guardamos dinámicamente para el futuro
           if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
             const responseToCache = networkResponse.clone();
             caches.open(CACHE_NAME).then(cache => {
@@ -65,9 +56,9 @@ self.addEventListener('fetch', event => {
           }
           return networkResponse;
         }).catch(() => {
-          // Si falla la red (Modo offline puro) y es el documento principal, fuerza la carga del index de la caché
+          // 3. CAÍDA DE RED (Modo offline puro): Si el usuario intenta navegar por la web, le forzamos la estructura base
           if (event.request.mode === 'navigate') {
-            return caches.match('./');
+            return caches.match('./index.html') || caches.match('./');
           }
         });
       })
