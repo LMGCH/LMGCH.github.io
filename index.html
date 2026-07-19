@@ -251,13 +251,12 @@
         body.dark-mode .main-header {
             box-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
-      /* Añade un margen de cortesía al desplazarse para que el menú superior no tape los títulos */
-section[id] {
-  scroll-margin-top: 140px;
-        }
-        html {
-        scroll-behavior: smooth;
-        }
+/* bloque limpio en tu sección de estilos CSS */
+html {
+  scroll-behavior: smooth;
+  /* Establece un colchón global igual al grosor de tu cabecera fija + margen de cortesía */
+  scroll-padding-top: 100px; 
+}
 
     </style>
 </head>
@@ -284,8 +283,8 @@ section[id] {
 
     <!-- 2. Envolvemos tu tarjeta en la clase "main-content" para que respete el espacio superior -->
     <main class="main-content">
-        <article class="card" id="sobre-mi" style="margin-top: 50px;">
-            <h1>Hola, soy Luis Miguel Galacho</h1>
+        <article class="card">
+            <h1 id="sobre-mi">Hola, soy Luis Miguel Galacho</h1>
             <p class="subtitle">Estudiante y Entusiasta Tecnológico</p>
             
                 <!-- Iconos de Contacto Rápido y Directo -->
