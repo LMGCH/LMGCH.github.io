@@ -105,6 +105,7 @@ Si deseas revisar mi código, conectar profesionalmente o proponer una colaborac
 <p align="center">
   <em>Si has llegado hasta aquí... ¡Muchas gracias por dedicar unos minutos a revisar mi trabajo! 🤝</em>
 </p>
+
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
@@ -114,9 +115,5 @@ Si deseas revisar mi código, conectar profesionalmente o proponer una colaborac
 ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
 
 ![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-121013?logo=github&logoColor=white)
-
-![PWA](https://img.shields.io/badge/PWA-Ready-5A0FC8?logo=pwa&logoColor=white)
-
-![Service Worker](https://img.shields.io/badge/Service_Worker-Enabled-4285F4)
 
 ![License](https://img.shields.io/badge/License-MIT-green)
