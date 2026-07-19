@@ -273,29 +273,36 @@ html {
 <body>
 
     <!-- Cabecera fotográfica y Barra de Navegación Fija -->
-<!-- 1. BARRA DE NAVEGACIÓN SUPERIOR (RECUPERADA Y REFORZADA) -->
-<nav class="navbar" style="position: fixed; top: 0; left: 0; right: 0; height: 60px; background: rgba(17, 17, 17, 0.75); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
-  <a href="#" style="color: #ffffff; font-weight: bold; text-decoration: none; font-size: 18px;">🚀 LMGCH.dev</a>
-  <div style="display: flex; gap: 20px;">
-    <a href="#sobre-mi" style="color: #ffffff; text-decoration: none; font-size: 14px; opacity: 0.85;">Sobre mí</a>
-    <a href="#tecnologias" style="color: #ffffff; text-decoration: none; font-size: 14px; opacity: 0.85;">Tecnologías</a>
-    <a href="#proyectos" style="color: #ffffff; text-decoration: none; font-size: 14px; opacity: 0.85;">Proyectos</a>
-  </div>
-</nav>
+<!-- 1. CABECERA FOTOGRÁFICA Y BARRA DE NAVEGACIÓN FIJA RESTAURADA -->
+ <header class="main-header">
+   <!-- Contenedor de la foto con el texto dinámico superpuesto en absoluta simetría -->
+   <div class="hero-bg" style="position: relative; height: 140px; display: flex; align-items: center; justify-content: center; text-align: center;">
+     
+     <!-- Imagen abstracta tecnológica original -->
+     <img src="https://images.unsplash.com/photo-1644088379091-d574269d422f?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tech Header" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index: 1;">
+     
+     <!-- Capa oscura intermedia para garantizar la legibilidad del texto de la terminal -->
+     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.45); z-index: 2;"></div>
+     
+     <!-- Contenedor del Título Animado -->
+     <div style="position: relative; z-index: 3; color: #ffffff; font-family: 'Courier New', Courier, monospace; padding: 0 20px;">
+       <h2 style="font-size: 20px; margin: 0 0 4px 0; font-weight: bold; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.7);">
+         &gt;_ <span id="typing-text"></span><span class="cursor">|</span>
+       </h2>
+       <p style="font-size: 11px; margin: 0; opacity: 0.85; text-shadow: 0 1px 3px rgba(0,0,0,0.6); font-family: system-ui, -apple-system, sans-serif;">Sistemas de Alta Disponibilidad & Redes</p>
+     </div>
+   </div>
 
-<!-- 2. HERO BANNER AJUSTADO (Se introduce un margen superior de 60px para no quedar oculto bajo el menú fijo) -->
-<header class="hero-banner" style="position: relative; height: 320px; margin: 0; padding: 60px 0 0 0; box-sizing: border-box; background-image: url('https://images.unsplash.com/photo-1644088379091-d574269d422f?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; z-index: 10;">
-  <!-- Capa oscura superpuesta -->
-  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
-  
-  <!-- Contenedor del Título Animado -->
-  <div style="position: relative; z-index: 2; color: #ffffff; font-family: 'Courier New', Courier, monospace; padding: 0 20px;">
-    <h2 style="font-size: 24px; margin: 0 0 10px 0; font-weight: bold; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.7);">
-      &gt;_ <span id="typing-text"></span><span class="cursor">|</span>
-    </h2>
-    <p style="font-size: 13px; margin: 0; opacity: 0.85; text-shadow: 0 1px 3px rgba(0,0,0,0.6); font-family: system-ui, -apple-system, sans-serif;">Sistemas de Alta Disponibilidad & Redes</p>
-  </div>
-</header>
+   <!-- Barra de navegación moderna original -->
+   <nav class="nav-bar">
+     <span class="nav-logo"> LMGCH.dev 🚀</span>
+     <div class="nav-links">
+       <a href="#sobre-mi">Sobre mí</a>
+       <a href="#tecnologias">Tecnologías</a>
+       <a href="#proyectos">Proyectos</a>
+     </div>
+   </nav>
+ </header>
 
 
     <!-- Botón flotante para cambiar de modo -->
