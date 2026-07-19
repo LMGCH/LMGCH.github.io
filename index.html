@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="128f0dc6-1523-431e-9298-b4a71d252aff"></script>
-    <!-- Conector oficial de iconos para desarrolladores (Devicon) -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/devicon@latest/devicon.min.css" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="128f0dc6-1523-431e-9298-b4a71d252aff"></script>
+  <!-- Conector oficial de iconos para desarrolladores (Devicon) -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/devicon@latest/devicon.min.css" />
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMGCH | Tech CV & Portfolio</title>
+
+  <!-- SEO y Metatags para que tu enlace luzca profesional en LinkedIn y buscadores -->
+  <meta name="description" content="Portafolio técnico de Luis Miguel Galacho. Estudiante e investigador en Comunicaciones de Misión Crítica (MCX), redes y desarrollo resiliente.">
+  <meta name="author" content="Luis Miguel Galacho">
+  
+  <!-- Configuración de Tarjeta para Redes Sociales (Open Graph) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LMGCH | Tech CV & Portfolio Resiliente">
+  <meta property="og:description" content="Explora mis proyectos en desarrollo de software, redes y optimización de perfiles TI para filtros ATS.">
+  <meta property="og:url" content="https://lmgch.github.io">
+  <!-- Imagen de vista previa: Usamos la misma de Unsplash que tienes de banner -->
+  <meta property="og:image" content="https://images.unsplash.com/photo-1644088379091-d574269d422f?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
     <title>LMGCH | Tech CV & Portfolio</title>
     <style>
         /* CSS: Aquí controlamos los colores y el diseño visual */
@@ -263,7 +277,7 @@
 
     <!-- 2. Envolvemos tu tarjeta en la clase "main-content" para que respete el espacio superior -->
     <main class="main-content">
-        <div class="card" id="sobre-mi">
+        <article class="card" id="sobre-mi">
             <h1>Hola, soy Luis Miguel Galacho</h1>
             <p class="subtitle">Estudiante y Entusiasta Tecnológico</p>
             
@@ -272,6 +286,7 @@
             <p>🛠️ Actualmente construyendo proyectos, subiendo código y rompiendo el algoritmo.</p>
             
             <!-- Sección de Habilidades Técnicas con Iconos -->
+            <section aria-labelledby="titulo-tecnografias">
             <h2 id="tecnologias" style="font-size: 18px; margin-top: 25px; text-align: left; color: inherit;">🛠️ Tecnologías en mi Radar</h2>
             <div class="skills-container">
                 <span class="skill-badge"><i class="devicon-html5-plain colored"></i> HTML5</span>
@@ -281,31 +296,40 @@
                 <span class="skill-badge"><i class="devicon-markdown-original"></i> Markdown</span>
             </div>
             
-            <!-- Sección de Proyectos -->
+            <!-- Sección Semántica de Proyectos -->
+            <section aria-labelledby="titulo-proyectos">
             <h2 id="proyectos" style="font-size: 18px; margin-top: 25px; text-align: left; color: inherit;">📁 Proyectos Recientes</h2>
             <div class="projects-grid">
                 <div class="project-card">
+                    <article class="project-card">
                     <h3>🚀 Grazalema Resiliente</h3>
                     <p>Un proyecto desarrollado en HTML centrado en la resiliencia y gestión de datos locales.</p>
                     <a href="https://github.com/LMGCH/grazalema-resiliente" target="_blank" class="project-link" data-umami-event="Click Proyecto Grazalema">"Ver repositorio ↗"</a>
-                 
+                    </article>                    
                 </div>
                 
                 <div class="project-card">
+                    <article class="project-card">
                     <h3>💻 Mi Web Personal</h3>
                     <p>Este mismo CV dinámico desarrollado desde cero para documentar mi evolución tech.</p>
                     <a href="https://github.com/LMGCH/LMGCH.github.io" target="_blank" class="project-link" data-umami-event="Click Codigo Web Personal">"Ver código fuente ↗"</a>
+                    </article>    
                 </div>
 
                 <div class="project-card">
+                    <article class="project-card">
                     <h3>📄 Creador de proyecto Ruta TI</h3>
                     <p>La Ruta TI del Candidato Tech: Cómo estructurar tu perfil para superar la criba del ATS y llegar al Tech Lead</p>
                     <a href="https://drive.google.com/file/d/16PSz4gvdJKmxCh8mskOyeKBB37Ib60m7/view?usp=sharing" target="_blank" class="project-link" data-umami-event="Descarga PDF Ruta TI">📥 Descargar PDF (Google Drive) ↗</a>
+                    </article>
                 </div>                
-            </div>
+            </section>
+    
+            <footer>
             
             <a href="https://www.linkedin.com/in/luis-miguel-galacho" target="_blank" class="btn" style="margin-top: 30px;" data-umami-event="Click LinkedIn">Conectar en LinkedIn</a>
-        </div>
+            </footer>
+          </article>
     </main>
 
     <script>
