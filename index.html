@@ -257,26 +257,34 @@ html {
   /* Establece un colchón global igual al grosor de tu cabecera fija + margen de cortesía */
   scroll-padding-top: 180px; 
 }
+/* Animación del parpadeo del cursor de terminal */
+.cursor {
+  animation: blink 0.8s infinite;
+  color: #007acc; /* Azul tecnológico que combina con tu foco técnico */
+  font-weight: bold;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
     </style>
 </head>
 <body>
 
     <!-- Cabecera fotográfica y Barra de Navegación Fija -->
-    <header class="main-header">
-        <div class="hero-bg">
-            <!-- Imagen abstracta tecnológica -->
-            <img src="https://images.unsplash.com/photo-1644088379091-d574269d422f?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tech Header">
-        </div>
-        <nav class="nav-bar">
-            <span class="nav-logo">🚀 LMGCH.dev</span>
-            <div class="nav-links">
-                <a href="#sobre-mi">Sobre mí</a>
-                <a href="#tecnologias">Tecnologías</a>
-                <a href="#proyectos">Proyectos</a>
-            </div>
-        </nav>
-    </header>
+    <header class="hero-banner" style="position: relative; height: 300px; background-image: url('https://images.unsplash.com/photo-1644088379091-d574269d422f?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center;">
+  <!-- Capa oscura superpuesta para que el texto resalte perfectamente sobre la imagen -->
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.45); z-index: 1;"></div>
+  
+  <!-- Contenedor del Título Animado -->
+  <div style="position: relative; z-index: 2; color: #ffffff; font-family: 'Courier New', Courier, monospace; padding: 0 20px;">
+    <h2 style="font-size: 26px; margin: 0 0 10px 0; font-weight: bold; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
+      &gt;_ <span id="typing-text"></span><span class="cursor">|</span>
+    </h2>
+    <p style="font-size: 14px; margin: 0; opacity: 0.85; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">Sistemas de Alta Disponibilidad & Redes</p>
+  </div>
+</header>
 
     <!-- Botón flotante para cambiar de modo -->
     <button id="theme-toggle" class="theme-btn" data-umami-event="Cambio Modo Oscuro">🌙 Modo Oscuro</button> 
@@ -476,6 +484,49 @@ document.getElementById('btn-scan').addEventListener('click', function() {
         .catch(err => console.error('❌ Error al registrar el Service Worker:', err));
     });
   }
+  // --- MOTOR DE TEXTO MECANOGRAFIADO (HERO BANNER) ---
+const words = ["Investigador MCX", "Desplegando Redes 5G", "Sistemas Resilientes", "Orquestación IA Local"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingDelay = 100;
+const erasingDelay = 50;
+const newWordDelay = 2000; // Tiempo que se queda la palabra escrita en pantalla
+const typingElement = document.getElementById("typing-text");
+
+function type() {
+  const currentWord = words[wordIndex];
+  
+  if (isDeleting) {
+    // Borrando caracteres
+    typingElement.textContent = currentWord.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    // Escribiendo caracteres
+    typingElement.textContent = currentWord.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  if (!isDeleting && charIndex === currentWord.length) {
+    // Ha terminado de escribir la palabra completa
+    isDeleting = true;
+    setTimeout(type, newWordDelay);
+  } else if (isDeleting && charIndex === 0) {
+    // Ha terminado de borrar la palabra
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length; // Pasa a la siguiente palabra
+    setTimeout(type, 500);
+  } else {
+    // Continúa el ciclo de escritura o borrado
+    setTimeout(type, isDeleting ? erasingDelay : typingDelay);
+  }
+}
+
+// Inicializar la animación al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+  if (typingElement) setTimeout(type, 1000);
+});
+
 </script>
 
 </body>
