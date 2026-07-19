@@ -1,30 +1,30 @@
-const CACHE_NAME = 'lmgch-portfolio-v3'; // Nueva versión limpia
+const CACHE_NAME = 'lmgch-resilient-v4';
 const ASSETS_TO_CACHE = [
-  './',
-  './index.html',
-  'https://jsdelivr.net'
+  '/',
+  '/index.html'
 ];
 
-// Instalación: Guarda SOLO los recursos locales estables
+// 1. Instalación: Guardamos en caché estrictamente el esqueleto local
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('📦 Guardando estructura base en caché resiliente...');
-        return cache.addAll(ASSETS_TO_CACHE);
+        console.log('📦 Almacenando esqueleto HTML inmune...');
+        // Usamos rutas absolutas limpias para evitar confusiones con las almohadillas (#) del menú
+        return cache.addAll(['/index.html']);
       })
       .then(() => self.skipWaiting())
   );
 });
 
-// Activación: Limpia de inmediato cualquier rastro de la caché rota anterior
+// 2. Activación: Limpieza radical de las cachés conflictivas anteriores
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cache => {
           if (cache !== CACHE_NAME) {
-            console.log('🧹 Eliminando caché obsoleta:', cache);
+            console.log('🧹 Eliminando rastro de caché conflictiva:', cache);
             return caches.delete(cache);
           }
         })
@@ -33,34 +33,37 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Intercepción de Red de Alta Disponibilidad
+// 3. Intercepción Inteligente: Evitar peticiones y salvar la carga
 self.addEventListener('fetch', event => {
+  // Regla de oro: Ignorar peticiones que no sean GET (como el tracking de Umami)
   if (event.request.method !== 'GET') return;
 
-  event.respondWith(
-    caches.match(event.request)
-      .then(cachedResponse => {
-        // 1. Si el recurso está en la caché local, lo servimos de inmediato
-        if (cachedResponse) {
-          return cachedResponse;
-        }
+  const url = new URL(event.request.url);
 
-        // 2. Si no está en caché (como la imagen de Unsplash o las analíticas de Umami), intentamos ir a la red
-        return fetch(event.request).then(networkResponse => {
-          // Si la respuesta de red es válida y es de nuestra web, la guardamos dinámicamente para el futuro
-          if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
-            const responseToCache = networkResponse.clone();
-            caches.open(CACHE_NAME).then(cache => {
-              cache.put(event.request, responseToCache);
-            });
-          }
-          return networkResponse;
-        }).catch(() => {
-          // 3. CAÍDA DE RED (Modo offline puro): Si el usuario intenta navegar por la web, le forzamos la estructura base
-          if (event.request.mode === 'navigate') {
-            return caches.match('./index.html') || caches.match('./');
-          }
-        });
+  // ¡EVITAMOS SU PETICIÓN! Si la petición va a LinkedIn, Google Drive o APIs externas, 
+  // dejamos que el navegador la maneje de forma ordinaria sin interferir ni cachear.
+  if (url.hostname.includes('linkedin.com') || url.hostname.includes('google.com') || url.hostname.includes('umami')) {
+    return; 
+  }
+
+  // Para el resto (nuestro HTML y estilos esenciales), aplicamos estrategia de rescate
+  event.respondWith(
+    fetch(event.request)
+      .then(networkResponse => {
+        // Si hay internet y la respuesta es nuestra, guardamos una copia fresca en caché
+        if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+          const responseToCache = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, responseToCache);
+          });
+        }
+        return networkResponse;
+      })
+      .catch(() => {
+        // COBERTURA DE FALLOS (Modo Offline Activo):
+        // Si la red se cae por completo, servimos el index.html guardado pase lo que pase
+        return caches.match('/index.html') || caches.match('/');
       })
   );
 });
+
