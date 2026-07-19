@@ -101,20 +101,23 @@
             text-decoration: underline;
         }
         /* Estilos del botón flotante */
-        .theme-btn {
-            position: fixed;
-            top: 180px;
-            right: 20px;
-            background: #24292e;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+         .theme-btn {
+         position: fixed;
+         top: 180px;
+         right: 20px;
+         background: #24292e;
+         color: white;
+         border: none;
+         padding: 8px 12px;
+         border-radius: 20px;
+         cursor: pointer;
+         font-size: 14px;
+         font-weight: bold;
+         transition: 0.3s;
+         /* Añade esta línea para que flote por encima de cualquier otra capa */
+         z-index: 9999; 
+         }
+
         .theme-btn:hover {
             transform: scale(1.05);
         }
