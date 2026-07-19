@@ -588,8 +588,52 @@ document.getElementById('btn-toggle-guia').addEventListener('click', function() 
     btn.innerHTML = '📖 Leer Resumen Técnico de la Guía';
   }
 });
+// --- MOTOR DE INSTALACIÓN PWA ---
+let deferredPrompt;
+const installBtn = document.getElementById('pwa-install-btn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevenimos que el navegador muestre su barra nativa por defecto
+  e.preventDefault();
+  // Guardamos el evento para ejecutarlo cuando el usuario pulse nuestro botón
+  deferredPrompt = e;
+  // Hacemos visible nuestro botón flotante verde en la esquina izquierda
+  if (installBtn) {
+    installBtn.style.display = 'block';
+  }
+});
+
+if (installBtn) {
+  installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    
+    // Mostramos la ventana nativa de confirmación de instalación
+    deferredPrompt.prompt();
+    
+    // Esperamos a que el usuario responda (Acepte o Cancele)
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`User response to the install prompt: ${outcome}`);
+    
+    // Limpiamos la variable, ya no se puede volver a usar este prompt
+    deferredPrompt = null;
+    // Ocultamos el botón ya que la app se está instalando
+    installBtn.style.display = 'none';
+  });
+}
+
+// Ocultar el botón automáticamente si la app ya ha sido instalada con éxito
+window.addEventListener('appinstalled', () => {
+  console.log('🎉 PWA instalada con éxito en el dispositivo.');
+  if (installBtn) {
+    installBtn.style.display = 'none';
+  }
+});
   
 </script>
+<!-- Botón Flotante para Instalar la Aplicación PWA (Oculto al inicio) -->
+<button id="pwa-install-btn" style="display: none; position: fixed; bottom: 20px; left: 20px; background: #2ea44f; color: white; border: none; padding: 10px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 9999; transition: transform 0.2s;" data-umami-event="Instalar PWA App">
+  📲 Instalar App LMGCH
+</button>
 
 </body>
 </html>
