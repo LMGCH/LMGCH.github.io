@@ -22,6 +22,10 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1644088379091-d574269d422f?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 <!-- Enlace oficial al Manifiesto de la PWA -->
 <link rel="manifest" href="./manifest.json">
+  <!-- Favicons oficiales para la pestaña del navegador -->
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png">
+<link rel="shortcut icon" type="image/png" href="./icon-192.png">
 
   <title>LMGCH | Tech CV & Portfolio</title>
     <style>
@@ -221,9 +225,12 @@
             align-items: center;
         }
         .nav-logo {
-            font-weight: bold;
-            font-size: 16px;
-        }
+           font-weight: bold;
+           font-size: 18px;
+           display: flex;
+           align-items: center;
+           gap: 8px;
+         }
         .nav-links a {
             color: #c9d1d9;
             text-decoration: none;
@@ -300,14 +307,18 @@ html {
    </div>
 
    <!-- Barra de navegación moderna original -->
-   <nav class="nav-bar">
-     <span class="nav-logo"> LMGCH.dev 🚀</span>
-     <div class="nav-links">
-       <a href="#sobre-mi">Sobre mí</a>
-       <a href="#tecnologias">Tecnologías</a>
-       <a href="#proyectos">Proyectos</a>
-     </div>
-   </nav>
+  <nav class="nav-bar">
+      <!-- Sustitución del texto por tu logotipo oficial e icono alineado -->
+      <a href="#" class="nav-logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
+        <img src="./icon-192.png" alt="LMGCH Logo" style="width: 24px; height: 24px; border-radius: 4px; object-fit: cover;">
+        <span>LMGCH.dev</span>
+      </a>
+      <div class="nav-links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#proyectos">Proyectos</a>
+      </div>
+    </nav>
  </header>
 
 
