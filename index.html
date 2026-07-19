@@ -314,11 +314,35 @@
                     <a href="https://github.com/LMGCH/LMGCH.github.io" target="_blank" class="project-link" data-umami-event="Click Codigo Web Personal">Ver código fuente ↗</a>
                     </article>    
 
-                    <article class="project-card">
-                    <h3>📄 Creador de proyecto Ruta TI</h3>
-                    <p>La Ruta TI del Candidato Tech: Cómo estructurar tu perfil para superar la criba del ATS y llegar al Tech Lead</p>
-                    <a href="https://drive.google.com/file/d/16PSz4gvdJKmxCh8mskOyeKBB37Ib60m7/view?usp=sharing" target="_blank" class="project-link" data-umami-event="Descarga PDF Ruta TI">📥 Descargar PDF (Google Drive) ↗</a>
-                    </article>
+                    <article class="project-card" style="grid-column: 1 / -1; text-align: left;">
+  <h3>Creador de proyecto Ruta TI 📄</h3>
+  <p>La Ruta TI del Candidato Tech: Cómo estructurar tu perfil para superar la criba del ATS y llegar al Tech Lead.</p>
+  <a href="https://drive.google.com/file/d/16PSz4gvdJKmxCh8mskOyeKBB37Ib60m7/view?usp=sharing" target="_blank" class="project-link" style="display:inline-block; margin-bottom: 15px;" data-umami-event="Descarga PDF Ruta TI">Descargar PDF Original (Google Drive) 📥 ↗</a>
+
+  <!-- Simulador ATS Interactivo -->
+  <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-top: 15px;">
+    <h4 style="margin-top: 0; margin-bottom: 10px; font-size: 15px; color: inherit;">⚡ Pon a prueba tu CV ante el algoritmo</h4>
+    <p style="font-size: 13px; opacity: 0.8; margin-bottom: 12px;">Pega las tecnologías principales que aparecen en tu currículum (separadas por comas):</p>
+    
+    <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+      <input type="text" id="ats-skills" placeholder="Ej: HTML5, Git, Docker, Python, React..." style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); color: inherit; font-size: 14px;">
+      <button id="btn-scan" class="btn" style="margin: 0; padding: 10px 20px; font-size: 14px;" data-umami-event="Escanear CV ATS">Escanear Perfil</button>
+    </div>
+
+    <!-- Resultado del escáner (Oculto al inicio) -->
+    <div id="ats-result" style="display: none; font-size: 14px; animation: fadeIn 0.3s ease;">
+      <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+        <span style="font-size: 18px; font-weight: bold;">Compatibilidad ATS:</span>
+        <span id="ats-score" style="font-size: 22px; font-weight: bold; color: #4caf50;">0%</span>
+      </div>
+      <!-- Barra de progreso visual -->
+      <div style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 12px;">
+        <div id="ats-bar" style="width: 0%; background: #4caf50; height: 100%; transition: width 0.8s ease;"></div>
+      </div>
+      <p id="ats-feedback" style="font-size: 13px; opacity: 0.9; margin: 0; line-height: 1.4;"></p>
+    </div>
+  </div>
+</article>
               
             </div> 
             </section>
@@ -357,6 +381,71 @@
                 localStorage.setItem('theme', 'light'); // Guarda "light"
             }
         });
+      // --- MOTOR DEL EVALUADOR ATS (RUTA TI) ---
+document.getElementById('btn-scan').addEventListener('click', function() {
+  const input = document.getElementById('ats-skills').value.trim();
+  const resultDiv = document.getElementById('ats-result');
+  const scoreSpan = document.getElementById('ats-score');
+  const barDiv = document.getElementById('ats-bar');
+  const feedbackP = document.getElementById('ats-feedback');
+  
+  if (!input) {
+    alert('Por favor, introduce algunas tecnologías para evaluar tu perfil.');
+    return;
+  }
+
+  // Convertimos la entrada a minúsculas y limpiamos espacios
+  const userSkills = input.toLowerCase().split(',').map(s => s.trim()).filter(s => s.length > 0);
+  
+  // Base de palabras clave críticas y recomendadas que buscan los Tech Leads
+  const criticalSkills = ['git', 'github', 'html', 'css', 'javascript', 'js', 'docker', 'linux', 'aws', 'python', 'ci/cd', 'api'];
+  const softSkills = ['agile', 'scrum', 'comunicacion', 'documentacion', 'testing'];
+
+  let score = 20; // Puntuación base por tener un perfil técnico limpio
+  let matches = [];
+
+  userSkills.forEach(skill => {
+    if (criticalSkills.includes(skill)) {
+      score += 10;
+      matches.push(skill.toUpperCase());
+    } else if (softSkills.includes(skill)) {
+      score += 5;
+    } else {
+      score += 2; // Tecnologías extra no listadas
+    }
+  });
+
+  // Limitamos el score máximo a 100% y mínimo a 20%
+  score = Math.min(score, 100);
+
+  // Mostramos el contenedor de resultados
+  resultDiv.style.display = 'block';
+  
+  // Animación del contador de progreso
+  scoreSpan.innerText = '0%';
+  barDiv.style.width = '0%';
+  
+  setTimeout(() => {
+    scoreSpan.innerText = score + '%';
+    barDiv.style.width = score + '%';
+    
+    // Cambiar color de la barra según puntuación
+    if (score < 50) {
+      barDiv.style.background = '#f44336'; // Rojo
+      scoreSpan.style.color = '#f44336';
+      feedbackP.innerHTML = '❌ <b>Perfil Crítico ante el ATS:</b> Tu CV carece de palabras clave estructurales básicas (como control de versiones Git o fundamentos web). El software de reclutamiento podría descartarte de forma automática antes de llegar al Tech Lead. Revisa la guía en PDF para optimizarlo.';
+    } else if (score >= 50 && score < 80) {
+      barDiv.style.background = '#ff9800'; // Naranja
+      scoreSpan.style.color = '#ff9800';
+      feedbackP.innerHTML = '⚠️ <b>Perfil Aceptable pero con Riesgo:</b> Superas los filtros iniciales básicos, pero te faltan tecnologías core altamente demandadas en el mercado actual para destacar entre la masa. ¡Añade más fundamentos de arquitectura o despliegue!';
+    } else {
+      barDiv.style.background = '#4caf50'; // Verde
+      scoreSpan.style.color = '#4caf50';
+      feedbackP.innerHTML = '✅ <b>¡Perfil Optimizado para el Éxito!:</b> Excelente densidad de palabras clave técnicas. Tienes una probabilidad altísima de superar las cribas automatizadas de recursos humanos y captar el interés directo de los equipos de ingeniería.';
+    }
+  }, 100);
+});
+
     </script>
 </body>
 </html>
