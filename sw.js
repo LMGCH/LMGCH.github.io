@@ -1,8 +1,13 @@
-const CACHE_NAME = 'lmgch-resilient-v10'; // Subimos a la v10
+const CACHE_NAME = 'lmgch-resilient-v11'; // Subimos a la v11
 const ASSETS_TO_CACHE = [
   '/',
-  '/index.html'
+  '/index.html',
+  '/manifest.json', // Añadimos el manifiesto a la caché
+  '/icon-192.png',   // Añadimos el icono 192
+  '/icon-512.png',   // Añadimos el icono 512
+  'https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css'
 ];
+
 
 // 1. Instalación: Guardamos en caché estrictamente el esqueleto local
 self.addEventListener('install', event => {
