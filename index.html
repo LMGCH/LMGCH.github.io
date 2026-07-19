@@ -429,7 +429,10 @@ html {
             </footer>
           </article>
     </main>
-
+<!-- Botón Flotante para Instalar la Aplicación PWA (Oculto al inicio) -->
+<button id="pwa-install-btn" style="display: none; position: fixed; bottom: 20px; left: 20px; background: #2ea44f; color: white; border: none; padding: 10px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 9999; transition: transform 0.2s;" data-umami-event="Instalar PWA App">
+  📲 Instalar App LMGCH
+</button>
     <script>
             const toggleButton = document.getElementById('theme-toggle');
         const body = document.body;
@@ -630,10 +633,5 @@ window.addEventListener('appinstalled', () => {
 });
   
 </script>
-<!-- Botón Flotante para Instalar la Aplicación PWA (Oculto al inicio) -->
-<button id="pwa-install-btn" style="display: none; position: fixed; bottom: 20px; left: 20px; background: #2ea44f; color: white; border: none; padding: 10px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 9999; transition: transform 0.2s;" data-umami-event="Instalar PWA App">
-  📲 Instalar App LMGCH
-</button>
-
 </body>
 </html>
