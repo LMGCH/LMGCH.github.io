@@ -286,6 +286,71 @@ html {
   background-color: #2cbe4e !important; /* Cambia a un verde de éxito de GitHub más brillante */
   box-shadow: 0 6px 16px rgba(0,0,0,0.4); /* La sombra se estira dando efecto de elevación */
 }
+/* Optimizaciones para pantallas móviles (pantallas menores a 768px) */
+@media (max-width: 768px) {
+  
+  /* 1. Evita el desborde del menú superior */
+  header nav, .navbar-links { 
+    display: flex;
+    flex-wrap: wrap; /* Permite que los enlaces bajen de línea si no caben */
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  header nav a, .navbar-links a {
+    font-size: 14px; /* Un tamaño más compacto para móvil */
+    padding: 6px 10px;
+  }
+
+  /* 2. Amplía drásticamente el área de clic de tus redes sociales */
+  .social-icons, .social-links-container { 
+    display: flex;
+    gap: 20px; /* Separa los iconos para evitar toques accidentales */
+    margin: 15px 0;
+    justify-content: center; /* Los centra en la pantalla móvil */
+  }
+
+  .social-icons a, .social-links-container a {
+    display: inline-block;
+    transform: scale(1.4); /* Agranda los iconos un 40% visualmente */
+    padding: 10px; /* Crea un área invisible de 44x44px perfecta para el pulgar */
+  }
+}
+   /* Optimizaciones de CSS nativo para móviles */
+@media (max-width: 768px) {
+  
+  /* 1. Activamos flexbox en el contenedor padre para poder reordenar los elementos */
+  .main-content { /* REEMPLAZA '.main-content' por la clase de tu contenedor padre real */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 2. Forzamos a la caja ATS a subir a la parte superior de la pantalla */
+  .ats-box {
+    order: -1 !important; /* El valor negativo la empuja arriba del todo, justo bajo tu presentación */
+    margin-bottom: 25px;  /* Le da espacio con el contenido que ahora queda abajo */
+    border: 1.5px solid #4caf50 !important; /* Un sutil borde verde para que el usuario Android se fije en ella al entrar */
+  }
+
+  /* 3. Evitamos el desborde del input y el botón en pantallas muy estrechas */
+  .ats-box div[style*="display: flex"] {
+    flex-direction: column; /* Hace que el input y el botón se apilen verticalmente en móviles */
+    gap: 12px !important;
+  }
+
+  /* 4. Optimizamos el botón "Escanear Perfil" para pantallas táctiles */
+  #btn-scan {
+    width: 100%; /* Ocupa todo el ancho en móvil, siendo mucho más fácil de pulsar con el pulgar */
+    padding: 14px 20px !important; /* Más alto para cumplir con los estándares de diseño móvil */
+    font-size: 15px !important;
+  }
+
+  /* 5. Optimizamos el input para evitar que el zoom automático de iOS/Android rompa el diseño */
+  #ats-skills {
+    font-size: 16px !important; /* Al usar 16px, los navegadores móviles no hacen un zoom molesto al enfocar el texto */
+    padding: 12px !important;
+  }
+}   
     </style>
 </head>
 <body>
