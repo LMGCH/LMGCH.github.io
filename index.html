@@ -462,7 +462,7 @@ body {
  const savedTheme = localStorage.getItem('theme');
  if (savedTheme === 'dark') {
  body.classList.add('dark-mode');
- toggleButton.textContent = 'Modo Claro ☀';
+ toggleButton.textContent = 'Modo Claro ☀️';
  } else {
  body.classList.remove('dark-mode');
  toggleButton.textContent = 'Modo Oscuro 🌙';
@@ -471,7 +471,7 @@ body {
  toggleButton.addEventListener('click', () => {
  body.classList.toggle('dark-mode');
  if (body.classList.contains('dark-mode')) {
- toggleButton.textContent = 'Modo Claro ☀';
+ toggleButton.textContent = 'Modo Claro ☀️';
  localStorage.setItem('theme', 'dark');
  } else {
  toggleButton.textContent = 'Modo Oscuro 🌙';
