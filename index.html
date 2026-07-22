@@ -280,11 +280,47 @@ html {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
-    /* Efecto dinámico al pasar el ratón sobre el botón de instalar PWA */
+/* 1. EL CONTENEDOR (Maneja la posición fija y la subida para esquivar la barra) */
+.pwa-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  padding-top: 40px; /* Espacio invisible para que el botón pueda subir */
+}
+
+/* En ordenadores: Cuando el ratón entra al contenedor, el botón sube */
+@media (hover: hover) {
+  .pwa-container:hover #pwa-install-btn {
+    transform: translateY(-40px); /* Sube 40px de forma fluida */
+  }
+}
+
+
+/* 2. EL BOTÓN (Maneja su aspecto visual base) */
+#pwa-install-btn {
+  background: #2ea44f;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  /* Unificamos las transiciones para que el movimiento y el color cambien suavemente a la vez */
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+              background-color 0.2s ease, 
+              box-shadow 0.2s ease;
+}
+
+
+/* 3. TU HOVER ORIGINAL OPTIMIZADO (Se ejecuta cuando el ratón toca el botón) */
 #pwa-install-btn:hover {
-  transform: scale(1.05); /* Se agranda un 5% de forma elástica */
-  background-color: #2cbe4e !important; /* Cambia a un verde de éxito de GitHub más brillante */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4); /* La sombra se estira dando efecto de elevación */
+  /* ¡Aquí está el truco! Multiplicamos el escalado por la subida para que no se cancelen */
+  transform: translateY(-40px) scale(1.05); 
+  background-color: #2cbe4e !important; 
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4); 
 }
 /* Optimizaciones para pantallas móviles (pantallas menores a 768px) */
 @media (max-width: 768px) {
@@ -540,10 +576,14 @@ html {
             </footer>
           </article>
     </main>
-<!-- Botón Flotante para Instalar la Aplicación PWA (Oculto al inicio) -->
-<button id="pwa-install-btn" style="display: none; position: fixed; bottom: 20px; left: 20px; background: #2ea44f; color: white; border: none; padding: 10px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 9999; transition: all 0.2s ease;" data-umami-event="Instalar PWA App">
-  📲 Instalar App LMGCH
-</button>
+<!-- El contenedor ahora maneja la posición fija en la pantalla -->
+<div class="pwa-container">
+  <!-- El botón solo tiene los estilos visuales (color, bordes, etc.) -->
+  <button id="pwa-install-btn" style="display: none;" data-umami-event=" Instalar App PWA">
+    📲 Instalar App
+  </button>
+</div>
+  
     <script>
             const toggleButton = document.getElementById('theme-toggle');
         const body = document.body;
