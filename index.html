@@ -1,788 +1,573 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="128f0dc6-1523-431e-9298-b4a71d252aff"></script>
-  <!-- Conector oficial de iconos para desarrolladores (Devicon) -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" />
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LMGCH | Tech CV & Portfolio</title>
+ <script defer src="https://cloud.umami.is/script.js" data-website-id="128f0dc6-1523-431e-9298-b4a71d252aff"></script>
+ <!-- Conector oficial de iconos para desarrolladores (Devicon) -->
+ <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" />
+ 
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>LMGCH | Tech CV & Portfolio</title>
+ <meta name="description" content="Portafolio técnico de Luis Miguel Galacho. Estudiante e investigador en Comunicaciones de Misión Crítica (MCX), redes y desarrollo resiliente.">
+ <meta name="author" content="Luis Miguel Galacho">
+ 
+ <!-- Configuración de Tarjeta para Redes Sociales (Open Graph) -->
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="LMGCH | Tech CV & Portfolio Resiliente">
+ <meta property="og:description" content="Explora mis proyectos en desarrollo de software, redes y optimización de perfiles TI para filtros ATS.">
+ <meta property="og:url" content="https://github.com/LMGCH">
+ <meta property="og:image" content="https://images.unsplash.com/photo-1644088379091-d574269d422f?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 
-  <!-- SEO y Metatags para que tu enlace luzca profesional en LinkedIn y buscadores -->
-  <meta name="description" content="Portafolio técnico de Luis Miguel Galacho. Estudiante e investigador en Comunicaciones de Misión Crítica (MCX), redes y desarrollo resiliente.">
-  <meta name="author" content="Luis Miguel Galacho">
-  
-  <!-- Configuración de Tarjeta para Redes Sociales (Open Graph) -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="LMGCH | Tech CV & Portfolio Resiliente">
-  <meta property="og:description" content="Explora mis proyectos en desarrollo de software, redes y optimización de perfiles TI para filtros ATS.">
-  <meta property="og:url" content="https://lmgch.github.io">
-  <!-- Imagen de vista previa: Usamos la misma de Unsplash que tienes de banner -->
-  <meta property="og:image" content="https://images.unsplash.com/photo-1644088379091-d574269d422f?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-<!-- Enlace oficial al Manifiesto de la PWA -->
-<link rel="manifest" href="./manifest.json">
-  <!-- Favicons oficiales para la pestaña del navegador -->
-<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png">
-<link rel="shortcut icon" type="image/png" href="./icon-192.png">
+ <link rel="manifest" href="./manifest.json">
+ <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+ <link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png">
+ <link rel="shortcut icon" type="image/png" href="./icon-192.png">
 
-  <title>LMGCH | Tech CV & Portfolio</title>
-    <style>
-        /* CSS: Aquí controlamos los colores y el diseño visual */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-        }
-        h1 {
-            color: #24292e; /* El color gris oscuro clásico de GitHub */
-            margin-bottom: 5px;
-        }
-        .subtitle {
-            color: #2ea44f; /* El verde de éxito de tus contribuciones */
-            font-weight: bold;
-            margin-top: 0;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #24292e;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background-color: #2ea44f;
-        }
-                /* Diseño para la cuadrícula de proyectos */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 25px;
-            text-align: left;
-        }
-        .project-card {
-            background: #f8f9fa;
-            border-left: 4px solid #2ea44f; /* Borde verde como tus contribuciones */
-            padding: 15px;
-            border-radius: 6px;
-        }
-        .project-card h3 {
-            margin: 0 0 5px 0;
-            color: #24292e;
-            font-size: 16px;
-        }
-        .project-card p {
-            margin: 0;
-            font-size: 14px;
-            color: #586069;
-        }
-        .project-link {
-            display: inline-block;
-            margin-top: 8px;
-            font-size: 13px;
-            color: #0366d6;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .project-link:hover {
-            text-decoration: underline;
-        }
-        /* Estilos del botón flotante */
-         .theme-btn {
-         position: fixed;
-         top: 180px;
-         right: 20px;
-         background: #24292e;
-         color: white;
-         border: none;
-         padding: 8px 12px;
-         border-radius: 20px;
-         cursor: pointer;
-         font-size: 14px;
-         font-weight: bold;
-         transition: 0.3s;
-         /* Añade esta línea para que flote por encima de cualquier otra capa */
-         z-index: 9999; 
-         }
+ <style>
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ background-color: #f4f7f6;
+ color: #333;
+ margin: 0;
+ padding: 0;
+ padding-top: 190px; /* Espacio para barra fija */
+ padding-bottom: 40px;
+ }
+ .card {
+ background: white;
+ padding: 30px;
+ border-radius: 12px;
+ box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+ max-width: 500px;
+ width: calc(100% - 60px);
+ margin: 0 auto; /* Solución al centrado de la página */
+ text-align: center;
+ }
+ h1 {
+ color: #24292e;
+ margin-bottom: 5px;
+ }
+ .subtitle {
+ color: #2ea44f;
+ font-weight: bold;
+ margin-top: 0;
+ }
+ .btn {
+ display: inline-block;
+ background-color: #24292e;
+ color: white;
+ padding: 10px 20px;
+ text-decoration: none;
+ border-radius: 6px;
+ margin-top: 20px;
+ transition: 0.3s;
+ }
+ .btn:hover {
+ background-color: #2ea44f;
+ }
+ .projects-grid {
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 15px;
+ margin-top: 25px;
+ text-align: left;
+ }
+ .project-card {
+ background: #f8f9fa;
+ border-left: 4px solid #2ea44f;
+ padding: 15px;
+ border-radius: 6px;
+ }
+ .project-card h3 {
+ margin: 0 0 5px 0;
+ color: #24292e;
+ font-size: 16px;
+ }
+ .project-card p {
+ margin: 0;
+ font-size: 14px;
+ color: #586069;
+ }
+ .project-link {
+ display: inline-block;
+ margin-top: 8px;
+ font-size: 13px;
+ color: #0366d6;
+ text-decoration: none;
+ font-weight: bold;
+ }
+ .project-link:hover {
+ text-decoration: underline;
+ }
+ .theme-btn {
+ position: fixed;
+ top: 145px; /* Ajustado para que no colisione con el menú inferior */
+ right: 20px;
+ background: #24292e;
+ color: white;
+ border: 1px solid #ffffff33;
+ padding: 8px 12px;
+ border-radius: 20px;
+ cursor: pointer;
+ font-size: 14px;
+ font-weight: bold;
+ transition: 0.3s;
+ z-index: 10001; /* Modificado para mantenerse encima de todo en móvil */
+ }
+ .theme-btn:hover {
+ transform: scale(1.05);
+ }
+ body.dark-mode {
+ background-color: #0d1117;
+ color: #c9d1d9;
+ }
+ body.dark-mode .card {
+ background-color: #161b22;
+ box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+ }
+ body.dark-mode h1, body.dark-mode .project-card h3 {
+ color: #f0f6fc;
+ }
+ body.dark-mode .project-card {
+ background-color: #21262d;
+ border-left-color: #58a6ff;
+ }
+ body.dark-mode .project-link {
+ color: #58a6ff;
+ }
+ body.dark-mode .project-card p {
+ color: #8b949e;
+ }
+ body.dark-mode .btn {
+ background-color: #21262d;
+ border: 1px solid #30363d;
+ }
+ .skills-container {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 10px;
+ margin-top: 10px;
+ margin-bottom: 20px;
+ }
+ .skill-badge {
+ background-color: #e1e4e8;
+ color: #24292e;
+ padding: 6px 12px;
+ border-radius: 20px;
+ font-size: 13px;
+ font-weight: 600;
+ transition: all 0.3s ease;
+ display: inline-flex;
+ align-items: center;
+ gap: 6px;
+ }
+ .skill-badge:hover {
+ background-color: #2ea44f;
+ color: white;
+ transform: translateY(-2px);
+ }
+ body.dark-mode .skill-badge {
+ background-color: #21262d;
+ color: #c9d1d9;
+ border: 1px solid #30363d;
+ }
+ body.dark-mode .skill-badge:hover {
+ background-color: #58a6ff;
+ color: #ffffff;
+ border-color: #58a6ff;
+ }
+ .main-header {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ z-index: 10000;
+ box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+ }
+ .hero-bg {
+ width: 100%;
+ height: 130px;
+ overflow: hidden;
+ }
+ .hero-bg img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ }
+ .nav-bar {
+ background-color: #24292e;
+ color: white;
+ padding: 12px 20px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ .nav-logo {
+ font-weight: bold;
+ font-size: 18px;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
+ .nav-links a {
+ color: #c9d1d9;
+ text-decoration: none;
+ margin-left: 15px;
+ font-size: 14px;
+ font-weight: 500;
+ transition: 0.3s;
+ }
+ .nav-links a:hover {
+ color: #58a6ff;
+ }
+ body.dark-mode .nav-bar {
+ background-color: #161b22;
+ border-bottom: 1px solid #30363d;
+ }
+ body.dark-mode .main-header {
+ box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+ }
+ html {
+ scroll-behavior: smooth;
+ scroll-padding-top: 180px; 
+ }
+ .cursor {
+ animation: blink 0.8s infinite;
+ color: #007acc;
+ font-weight: bold;
+ }
+ @keyframes blink {
+ 0%, 100% { opacity: 1; }
+ 50% { opacity: 0; }
+ }
+ .pwa-container {
+ position: fixed;
+ bottom: 20px;
+ left: 20px;
+ z-index: 9999;
+ padding-top: 40px;
+ }
+ @media (hover: hover) {
+ .pwa-container:hover #pwa-install-btn {
+ transform: translateY(-40px);
+ }
+ }
+ #pwa-install-btn {
+ background: #2ea44f;
+ color: white;
+ border: none;
+ padding: 10px 16px;
+ border-radius: 20px;
+ cursor: pointer;
+ font-size: 14px;
+ font-weight: bold;
+ box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+ transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+ }
+ #pwa-install-btn:hover {
+ transform: translateY(-40px) scale(1.05); 
+ background-color: #2cbe4e !important; 
+ box-shadow: 0 6px 16px rgba(0,0,0,0.4); 
+ }
+ .main-content {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 0 20px;
+ }
 
-        .theme-btn:hover {
-            transform: scale(1.05);
-        }
-
-        /* Estilos que se aplicarán cuando el Modo Oscuro esté activo */
-        body.dark-mode {
-            background-color: #0d1117; /* El negro azulado oficial de GitHub Dark */
-            color: #c9d1d9;
-        }
-        body.dark-mode .card {
-            background-color: #161b22;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-        body.dark-mode h1, body.dark-mode .project-card h3 {
-            color: #f0f6fc;
-        }
-        body.dark-mode .project-card {
-            background-color: #21262d;
-            border-left-color: #58a6ff; /* El borde cambia a azul eléctrico */
-        }
-        body.dark-mode .project-link {
-            color: #58a6ff;
-        }
-        body.dark-mode .project-card p {
-            color: #8b949e; /* Un gris claro para que contraste y se lea bien */
-        }
-        body.dark-mode .btn {
-            background-color: #21262d;
-            border: 1px solid #30363d;
-        }
-        /* Contenedor y diseño de las habilidades */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-        .skill-badge {
-            background-color: #e1e4e8;
-            color: #24292e;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px; /* Separa el icono del texto del lenguaje */
-
-        }
-        .skill-badge:hover {
-            background-color: #2ea44f; /* El verde de GitHub al pasar el ratón */
-            color: white;
-            transform: translateY(-2px); /* Pequeño efecto de flotación */
-        }
-
-        /* Adaptación automática para el Modo Oscuro */
-        body.dark-mode .skill-badge {
-            background-color: #21262d;
-            color: #c9d1d9;
-            border: 1px solid #30363d;
-        }
-        body.dark-mode .skill-badge:hover {
-            background-color: #58a6ff; /* Cambia a azul eléctrico en modo oscuro */
-            color: #ffffff;
-            border-color: #58a6ff;
-        }
-        /* CSS para hacer la cabecera fija arriba */
-        .main-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000; /* Asegura que siempre esté por encima de la tarjeta */
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        /* Ajuste de la foto estática de cabecera */
-        .hero-bg {
-            width: 100%;
-            height: 120px;
-            overflow: hidden;
-        }
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Recorta la imagen para que encaje como un banner */
-        }
-
-        /* Barra de navegación moderna */
-        .nav-bar {
-            background-color: #24292e;
-            color: white;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-logo {
-           font-weight: bold;
-           font-size: 18px;
-           display: flex;
-           align-items: center;
-           gap: 8px;
-         }
-        .nav-links a {
-            color: #c9d1d9;
-            text-decoration: none;
-            margin-left: 15px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        .nav-links a:hover {
-            color: #58a6ff;
-        }
-
-        /* Modificamos el body y el contenedor principal para que dejen espacio a la barra fija */
-        body {
-            display: block; /* Quitamos el flex anterior para que el scroll funcione natural */
-            padding-top: 190px; /* Espacio exacto para que la tarjeta no empiece debajo del menú */
-            padding-bottom: 40px;
-        }
-        .main-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        /* Adaptación de la barra de navegación al Modo Oscuro */
-        body.dark-mode .nav-bar {
-            background-color: #161b22;
-            border-bottom: 1px solid #30363d;
-        }
-        body.dark-mode .main-header {
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-/* bloque limpio en tu sección de estilos CSS */
-html {
-  scroll-behavior: smooth;
-  /* Establece un colchón global igual al grosor de tu cabecera fija + margen de cortesía */
-  scroll-padding-top: 180px; 
-}
-/* Animación del parpadeo del cursor de terminal */
-.cursor {
-  animation: blink 0.8s infinite;
-  color: #007acc; /* Azul tecnológico que combina con tu foco técnico */
-  font-weight: bold;
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-/* 1. EL CONTENEDOR (Maneja la posición fija y la subida para esquivar la barra) */
-.pwa-container {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 9999;
-  padding-top: 40px; /* Espacio invisible para que el botón pueda subir */
-}
-
-/* En ordenadores: Cuando el ratón entra al contenedor, el botón sube */
-@media (hover: hover) {
-  .pwa-container:hover #pwa-install-btn {
-    transform: translateY(-40px); /* Sube 40px de forma fluida */
-  }
-}
-
-
-/* 2. EL BOTÓN (Maneja su aspecto visual base) */
-#pwa-install-btn {
-  background: #2ea44f;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  /* Unificamos las transiciones para que el movimiento y el color cambien suavemente a la vez */
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
-              background-color 0.2s ease, 
-              box-shadow 0.2s ease;
-}
-
-
-/* 3. TU HOVER ORIGINAL OPTIMIZADO (Se ejecuta cuando el ratón toca el botón) */
-#pwa-install-btn:hover {
-  /* ¡Aquí está el truco! Multiplicamos el escalado por la subida para que no se cancelen */
-  transform: translateY(-40px) scale(1.05); 
-  background-color: #2cbe4e !important; 
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4); 
-}
-/* Optimizaciones para pantallas móviles (pantallas menores a 768px) */
-@media (max-width: 768px) {
-  
-  /* 1. Evita el desborde del menú superior */
-  header nav, .navbar-links { 
-    display: flex;
-    flex-wrap: wrap; /* Permite que los enlaces bajen de línea si no caben */
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  header nav a, .navbar-links a {
-    font-size: 14px; /* Un tamaño más compacto para móvil */
-    padding: 6px 10px;
-  }
-
-  /* 2. Amplía drásticamente el área de clic de tus redes sociales */
-  .social-icons, .social-links-container { 
-    display: flex;
-    gap: 20px; /* Separa los iconos para evitar toques accidentales */
-    margin: 15px 0;
-    justify-content: center; /* Los centra en la pantalla móvil */
-  }
-
-  .social-icons a, .social-links-container a {
-    display: inline-block;
-    transform: scale(1.4); /* Agranda los iconos un 40% visualmente */
-    padding: 10px; /* Crea un área invisible de 44x44px perfecta para el pulgar */
-  }
-}
-   /* Optimizaciones de CSS nativo para móviles */
-@media (max-width: 768px) {
-  
-  /* 1. Activamos flexbox en el contenedor padre para poder reordenar los elementos */
-  .main-content { /* REEMPLAZA '.main-content' por la clase de tu contenedor padre real */
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* 2. Forzamos a la caja ATS a subir a la parte superior de la pantalla */
-  .ats-box {
-    order: -1 !important; /* El valor negativo la empuja arriba del todo, justo bajo tu presentación */
-    margin-bottom: 25px;  /* Le da espacio con el contenido que ahora queda abajo */
-    border: 1.5px solid #4caf50 !important; /* Un sutil borde verde para que el usuario Android se fije en ella al entrar */
-  }
-
-  /* 3. Evitamos el desborde del input y el botón en pantallas muy estrechas */
-  .ats-box div[style*="display: flex"] {
-    flex-direction: column; /* Hace que el input y el botón se apilen verticalmente en móviles */
-    gap: 12px !important;
-  }
-
-  /* 4. Optimizamos el botón "Escanear Perfil" para pantallas táctiles */
-  #btn-scan {
-    width: 100%; /* Ocupa todo el ancho en móvil, siendo mucho más fácil de pulsar con el pulgar */
-    padding: 14px 20px !important; /* Más alto para cumplir con los estándares de diseño móvil */
-    font-size: 15px !important;
-  }
-
-  /* 5. Optimizamos el input para evitar que el zoom automático de iOS/Android rompa el diseño */
-  #ats-skills {
-    font-size: 16px !important; /* Al usar 16px, los navegadores móviles no hacen un zoom molesto al enfocar el texto */
-    padding: 12px !important;
-  }
-}   
-    </style>
+ /* Optimizaciones Móviles */
+ @media (max-width: 768px) {
+ .main-content { 
+ display: flex;
+ flex-direction: column;
+ }
+ .ats-box {
+ order: -1 !important; 
+ margin-bottom: 25px; 
+ border: 1.5px solid #4caf50 !important; 
+ }
+ .ats-box div[style*="display: flex"] {
+ flex-direction: column; 
+ gap: 12px !important;
+ }
+ #btn-scan {
+ width: 100%; 
+ padding: 14px 20px !important; 
+ font-size: 15px !important;
+ }
+ #ats-skills {
+ font-size: 16px !important; 
+ padding: 12px !important;
+ }
+ .nav-bar {
+ flex-direction: column;
+ gap: 8px;
+ padding: 8px;
+ }
+ .nav-links {
+ display: flex;
+ gap: 10px;
+ margin: 0;
+ }
+ .nav-links a {
+ margin: 0;
+ }
+ .theme-btn {
+ top: auto;
+ bottom: 20px;
+ right: 20px;
+ }
+ } 
+ </style>
 </head>
 <body>
 
-    <!-- Cabecera fotográfica y Barra de Navegación Fija -->
-<!-- 1. CABECERA FOTOGRÁFICA Y BARRA DE NAVEGACIÓN FIJA RESTAURADA -->
  <header class="main-header">
-   <!-- Contenedor de la foto con el texto dinámico superpuesto en absoluta simetría -->
-   <div class="hero-bg" style="position: relative; height: 130px; display: flex; align-items: center; justify-content: center; text-align: center;">
-     
-     <!-- Imagen abstracta tecnológica original -->
-     <img src="https://images.unsplash.com/photo-1644088379091-d574269d422f?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tech Header" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index: 1;">
-     
-     <!-- Capa oscura intermedia para garantizar la legibilidad del texto de la terminal -->
-     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.45); z-index: 2;"></div>
-     
-     <!-- Contenedor del Título Animado -->
-     <div style="position: relative; z-index: 3; color: #ffffff; font-family: 'Courier New', Courier, monospace; padding: 0 20px;">
-       <h2 style="font-size: 20px; margin: 0 0 4px 0; font-weight: bold; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.7);">
-         &gt;_ <span id="typing-text"></span><span class="cursor">|</span>
-       </h2>
-       <p style="font-size: 11px; margin: 0; opacity: 0.85; text-shadow: 0 1px 3px rgba(0,0,0,0.6); font-family: system-ui, -apple-system, sans-serif;">Sistemas de Alta Disponibilidad & Redes</p>
-     </div>
-   </div>
-
-   <!-- Barra de navegación moderna original -->
-  <nav class="nav-bar">
-      <!-- Sustitución del texto por tu logotipo oficial e icono alineado -->
-      <a href="https://www.linkedin.com/in/luis-miguel-galacho/" class="nav-logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
-        <img src="./icon-192.png" alt="LMGCH Logo" style="width: 24px; height: 24px; border-radius: 4px; object-fit: cover;">
-        <span>LMGCH.dev</span>
-      </a>
-      <div class="nav-links">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#tecnologias">Tecnologías</a>
-        <a href="#proyectos">Proyectos</a>
-      </div>
-    </nav>
+ <div class="hero-bg" style="position: relative; display: flex; align-items: center; justify-content: center; text-align: center;">
+ <img src="https://images.unsplash.com/photo-1644088379091-d574269d422f?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tech Header" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index: 1;">
+ <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.45); z-index: 2;"></div>
+ <div style="position: relative; z-index: 3; color: #ffffff; font-family: 'Courier New', Courier, monospace; padding: 0 20px;">
+ <h2 style="font-size: 20px; margin: 0 0 4px 0; font-weight: bold; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.7);">
+ &gt;_ <span id="typing-text"></span><span class="cursor">|</span>
+ </h2>
+ <p style="font-size: 11px; margin: 0; opacity: 0.85; text-shadow: 0 1px 3px rgba(0,0,0,0.6); font-family: system-ui, -apple-system, sans-serif;">Sistemas de Alta Disponibilidad & Redes</p>
+ </div>
+ </div>
+ <nav class="nav-bar">
+ <a href="https://www.linkedin.com/in/luis-miguel-galacho/" class="nav-logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
+ <img src="./icon-192.png" alt="LMGCH Logo" style="width: 24px; height: 24px; border-radius: 4px; object-fit: cover;">
+ <span>LMGCH.dev</span>
+ </a>
+ <div class="nav-links">
+ <a href="#sobre-mi">Sobre mí</a>
+ <a href="#tecnologias">Tecnologías</a>
+ <a href="#proyectos">Proyectos</a>
+ </div>
+ </nav>
  </header>
 
+ <button id="theme-toggle" class="theme-btn" data-umami-event="Cambio Modo Oscuro">Modo Oscuro 🌙</button>
 
-    <!-- Botón flotante para cambiar de modo -->
-    <!-- Fuerza al botón a flotar por encima del banner con z-index: 99 -->
-<button id="theme-toggle" class="theme-btn" style="z-index: 99;" data-umami-event="Cambio Modo Oscuro">🌙 Modo Oscuro</button>
+ <main class="main-content">
+ <article class="card">
+ <h1 id="sobre-mi">Hola, soy Luis Miguel Galacho</h1>
+ <p class="subtitle">Estudiante y Entusiasta Tecnológico</p>
  
+ <div style="display: flex; justify-content: center; gap: 15px; margin: 15px 0 25px 0; font-size: 20px;">
+ <a href="https://github.com/LMGCH" target="_blank" style="color: inherit; text-decoration: none;" data-umami-event="Contacto GitHub" title="GitHub"><i class="devicon-github-original"></i></a>
+ <a href="https://www.linkedin.com/in/luis-miguel-galacho/" target="_blank" style="color: inherit; text-decoration: none;" data-umami-event="Contacto LinkedIn" title="LinkedIn"><i class="devicon-linkedin-plain"></i></a>
+ <a href="mailto:luismiguelgalacho@gmail.com" style="color: inherit; text-decoration: none;" data-umami-event="Contacto Email" title="Enviar Email">✉</a>
+ </div>
+ <p>Bienvenido a mi laboratorio en GitHub. Esta página web está viva y crecerá a medida que evolucione mi experiencia estudiantil y profesional en el mundo del desarrollo de software e informática.</p>
+ <p>Actualmente construyendo proyectos, subiendo código y rompiendo el algoritmo 🛠</p>
 
-    <!-- 2. Envolvemos tu tarjeta en la clase "main-content" para que respete el espacio superior -->
-    <main class="main-content">
-        <article class="card">
-            <h1 id="sobre-mi">Hola, soy Luis Miguel Galacho</h1>
-            <p class="subtitle">Estudiante y Entusiasta Tecnológico</p>
-            
-                <!-- Iconos de Contacto Rápido y Directo -->
-    <div style="display: flex; gap: 15px; margin: 15px 0 25px 0; font-size: 20px;">
-      <a href="https://github.com/LMGCH" target="_blank" style="color: inherit; text-decoration: none;" data-umami-event="Contacto GitHub" title="GitHub"><i class="devicon-github-original"></i></a>
-      <a href="https://www.linkedin.com/in/luis-miguel-galacho/" target="_blank" style="color: inherit; text-decoration: none;" data-umami-event="Contacto LinkedIn" title="LinkedIn"><i class="devicon-linkedin-plain"></i></a>
-      <a href="mailto:luismiguelgalacho@gmail.com" style="color: inherit; text-decoration: none;" data-umami-event="Contacto Email" title="Enviar Email">✉️</a>
-    </div>
-    
-    <p>Bienvenido a mi laboratorio en GitHub. Esta página web está viva y crecerá a medida que evolucione mi experiencia estudiantil y profesional en el mundo del desarrollo de software e informática.</p>
-    <p>Actualmente construyendo proyectos, subiendo código y 🛠 rompiendo el algoritmo.</p>
-
-<!-- Sección: Enfoque Estratégico Unificado en Diseño de Tarjeta -->
-<section style="margin-top: 35px; background: rgba(0, 122, 204, 0.06); padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 122, 204, 0.2); text-align: left;">
-  <h3 style="margin: 0 0 10px 0; font-size: 16px; color: inherit; display: flex; align-items: center; gap: 8px;">
-    📡 Foco Técnico e Investigación
-  </h3>
-  <p style="font-size: 14px; margin: 0; opacity: 0.9; line-height: 1.5;">
-    Especializado en el despliegue de infraestructuras críticas, orquestación de IA local, redes de comunicación de seguridad pública (MCX) y sistemas resilientes de alta disponibilidad frente a fallos catastróficos.
-  </p>
-</section>
-
-          
-            <section id="tecnologias" aria-labelledby="titulo-tecnografias" style="margin-top: 50px;">
-            <h2 id="tecnologias" style="font-size: 18px; margin-top: 25px; text-align: left; color: inherit;">🛠️ Tecnologías en mi Radar</h2>
-            <div class="skills-container">
-                <span class="skill-badge"><i class="devicon-html5-plain colored"></i> HTML5</span>
-                <span class="skill-badge"><i class="devicon-css3-plain colored"></i> CSS3</span>
-                <span class="skill-badge"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
-                <span class="skill-badge"><i class="devicon-git-plain colored"></i> Git & GitHub</span>
-                <span class="skill-badge"><i class="devicon-markdown-original"></i> Markdown</span>
-            </div>
-            </section>
-          
-            <!-- Sección Semántica de Proyectos -->
-            <section id="proyectos" aria-labelledby="titulo-proyectos" style="margin-top: 50px;">
-            <h2 id="proyectos" style="font-size: 18px; margin-top: 25px; text-align: left; color: inherit;">📁 Proyectos Recientes</h2>
-         <div class="projects-grid"> 
+ <section style="margin-top: 35px; background: rgba(0, 122, 204, 0.06); padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 122, 204, 0.2); text-align: left;">
+ <h3 style="margin: 0 0 10px 0; font-size: 16px; color: inherit; display: flex; align-items: center; gap: 8px;">
+ Foco Técnico e Investigación 📡
+ </h3>
+ <p style="font-size: 14px; margin: 0; opacity: 0.9; line-height: 1.5;">
+ Especializado en el despliegue de infraestructuras críticas, orquestación de IA local, redes de comunicación de seguridad pública (MCX) y sistemas resilientes de alta disponibilidad frente a fallos catastróficos.
+ </p>
+ </section>
  
-  <article class="project-card">
-    <h3> Grazalema Resiliente</h3> 🚀
-    <p>Un proyecto desarrollado en HTML centrado en la resiliencia y gestión de datos locales.</p>
-    <a href="https://github.com" target="_blank" class="project-link" data-umami-event="Click Proyecto Grazalema">Ver repositorio </a> ↗
-  </article> 
+ <section id="tecnologias" style="margin-top: 50px;">
+ <h2 style="font-size: 18px; margin-top: 25px; text-align: left; color: inherit;"> Tecnologías en mi Radar 🛠</h2>
+ <div class="skills-container">
+ <span class="skill-badge"><i class="devicon-html5-plain colored"></i> HTML5</span>
+ <span class="skill-badge"><i class="devicon-css3-plain colored"></i> CSS3</span>
+ <span class="skill-badge"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+ <span class="skill-badge"><i class="devicon-git-plain colored"></i> Git & GitHub</span>
+ <span class="skill-badge"><i class="devicon-markdown-original"></i> Markdown</span>
+ </div>
+ </section>
  
-  <article class="project-card">
-    <h3> Mi Web Personal</h3> 💻
-    <p>Este mismo CV dinámico desarrollado desde cero para documentar mi evolución tech.</p>
-    <a href="https://github.com" target="_blank" class="project-link" data-umami-event="Click Codigo Web Personal">Ver código fuente </a> ↗
-  </article> 
+ <section id="proyectos" style="margin-top: 50px;">
+ <h2 style="font-size: 18px; margin-top: 25px; text-align: left; color: inherit;"> Proyectos Recientes 📁</h2>
+ <div class="projects-grid"> 
+ <article class="project-card">
+ <h3> Grazalema Resiliente 🚀</h3>
+ <p>Un proyecto desarrollado en HTML centrado en la resiliencia y gestión de datos locales.</p>
+ <a href="https://github.com" target="_blank" class="project-link" data-umami-event="Click Proyecto Grazalema">Ver repositorio ↗</a>
+ </article> 
+ <article class="project-card">
+ <h3> Mi Web Personal 💻</h3>
+ <p>Este mismo CV dinámico desarrollado desde cero para documentar mi evolución tech.</p>
+ <a href="https://github.com" target="_blank" class="project-link" data-umami-event="Click Codigo Web Personal">Ver código fuente ↗</a>
+ </article> 
+ <article class="project-card" style="grid-column: 1 / -1; text-align: left;">
+ <h3>Creador de proyecto Ruta TI 📄</h3>
+ <p>La Ruta TI del Candidato Tech: Cómo estructurar tu perfil para superar la criba del ATS y llegar al Tech Lead.</p>
+ <a href="https://google.com" target="_blank" class="project-link" style="display:inline-block; margin-bottom: 15px;" data-umami-event="Descarga PDF Ruta TI">Descargar PDF Original (Google Drive) 📥 ↗</a>
+ <button id="btn-toggle-guia" class="btn" style="margin-top: 15px; width: 100%; background: rgba(255,255,255,0.1); color: inherit; border: 1px solid rgba(255,255,255,0.2); cursor: pointer;" data-umami-event="Desplegar Guia Ruta TI">
+ Leer Resumen Técnico de la Guía 📖
+ </button>
+ <div id="guia-content" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.1); border-radius: 8px; border-left: 3px solid #2ea44f;">
+ <h4 style="margin: 0 0 10px 0; font-size: 15px; color: inherit;"> La Ruta TI del Candidato Tech 🗺</h4>
+ <div style="font-size: 13px; line-height: 1.5; opacity: 0.9;">
+ <p style="margin: 0 0 10px 0;"><strong>1. El Filtro del Algoritmo (ATS):</strong> Las herramientas de reclutamiento escanean tu currículum buscando palabras clave específicas de ingeniería...</p>
+ <p style="margin: 0 0 10px 0;"><strong>2. Captar al Tech Lead en 10 segundos:</strong> Estructura tu experiencia usando la metodología STAR...</p>
+ <p style="margin: 0 0 10px 0;"><strong>3. El Control de Versiones es Rey:</strong> Para un perfil junior, un perfil de GitHub activo demuestra experiencia real.</p>
+ </div>
+ </div>
+ </article>
+ </div>
+
+ <div class="ats-box" style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-top: 25px;">
+ <h4 style="margin-top: 0; margin-bottom: 10px; font-size: 15px; color: inherit;"> Pon a prueba tu CV ante el algoritmo ⚡</h4>
+ <p style="font-size: 13px; opacity: 0.8; margin-bottom: 12px;">Pega las tecnologías principales que aparecen en tu currículum (separadas por comas):</p>
+ <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+ <input type="text" id="ats-skills" placeholder="Ej: HTML5, Git, Docker, Python, React..." style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.05); color: inherit; font-size: 14px;">
+ <button id="btn-scan" class="btn" style="margin: 0; padding: 10px 20px; font-size: 14px;" data-umami-event="Escanear CV ATS">Escanear Perfil</button>
+ </div>
+ <div id="ats-result" style="display: none; font-size: 14px;">
+ <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+ <span style="font-size: 18px; font-weight: bold;">Compatibilidad ATS:</span>
+ <span id="ats-score" style="font-size: 22px; font-weight: bold; color: #4caf50;">0%</span>
+ </div>
+ <div style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 12px;">
+ <div id="ats-bar" style="width: 0%; background: #4caf50; height: 100%; transition: width 0.8s ease;"></div>
+ </div>
+ <p id="ats-feedback" style="font-size: 13px; opacity: 0.9; margin: 0; line-height: 1.4;"></p>
+ </div>
+ </div>
+
+ </section>
+
+ <section style="margin-top: 40px; padding: 15px; background: rgba(0,0,0,0.05); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">
+ <h4 style="margin: 0 0 8px 0; font-size: 14px; color: inherit; display: flex; align-items: center; gap: 6px;">
+ Compromiso de Seguridad y Privacidad 🛡
+ </h4>
+ <p style="font-size: 12px; margin: 0; opacity: 0.85; line-height: 1.5;">
+ Este laboratorio está construido bajo estándares estrictos de la industria tecnológica...
+ </p>
+ </section>
  
-  <article class="project-card" style="grid-column: 1 / -1; text-align: left;">
-    <h3>Creador de proyecto Ruta TI </h3> 📄
-    <p>La Ruta TI del Candidato Tech: Cómo estructurar tu perfil para superar la criba del ATS y llegar al Tech Lead.</p>
-    <a href="https://google.com" target="_blank" class="project-link" style="display:inline-block; margin-bottom: 15px;" data-umami-event="Descarga PDF Ruta TI">Descargar PDF Original (Google Drive) </a> 📥 ↗
+ <footer>
+ <a href="https://linkedin.com" target="_blank" class="btn" style="margin-top: 30px;" data-umami-event="Click LinkedIn">Conectar en LinkedIn</a>
+ <a href="https://github.io" target="_blank" class="btn" style="margin-top: 30px;" data-umami-event="Click Grazalema Resiliente">Web de Grazalema Resiliente</a> 
+ </footer>
+ </article>
+ </main>
+
+ <div class="pwa-container">
+ <button id="pwa-install-btn" style="display: none;" data-umami-event="Instalar App PWA">Instalar App 📲</button>
+ </div>
  
-    <!-- Botón Desplegable Único para Leer la Guía Nátiva -->
-    <button id="btn-toggle-guia" class="btn" style="margin-top: 15px; width: 100%; background: var(--border-color, rgba(255,255,255,0.1)); color: inherit; border: 1px solid var(--border-color, rgba(255,255,255,0.2)); cursor: pointer;" data-umami-event="Desplegar Guia Ruta TI">
-      Leer Resumen Técnico de la Guía 📖
-    </button>
+ <script>
+ const toggleButton = document.getElementById('theme-toggle');
+ const body = document.body;
 
-    <!-- Contenedor Oculto Único de la Guía (Acordeón) -->
-    <div id="guia-content" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.1); border-radius: 8px; border-left: 3px solid #2ea44f; animation: fadeIn 0.3s ease;">
-      <h4 style="margin: 0 0 10px 0; font-size: 15px; color: inherit;"> La Ruta TI 🗺 del Candidato Tech</h4>
-      <div style="font-size: 13px; line-height: 1.5; opacity: 0.9;">
-        <p style="margin: 0 0 10px 0;"><strong>1. El Filtro del Algoritmo (ATS):</strong> Las herramientas de reclutamiento escanean tu currículum buscando palabras clave específicas de ingeniería. Si tu perfil no tiene una densidad del 60-70% de las tecnologías demandadas, el sistema te descarta automáticamente antes de que un humano te lea.</p>
-        <p style="margin: 0 0 10px 0;"><strong>2. Captar al Tech Lead en 10 segundos:</strong> Los líderes técnicos no buscan descripciones largas, buscan hechos. Estructura tu experiencia usando la metodología STAR (Situación, Tarea, Acción, Resultado) y resalta el impacto tecnológico medible de tus proyectos.</p>
-        <p style="margin: 0 0 10px 0;"><strong>3. El Control de Versiones es Rey:</strong> Para un perfil junior o estudiante, un perfil de GitHub activo y con commits estructurados (siguiendo estándares como <i>Conventional Commits</i>) demuestra más experiencia real que cualquier título teórico.</p>
-      </div>
-      <p style="font-size: 12px; opacity: 0.7; margin: 10px 0 0 0; text-align: right; font-style: italic;">Contenido extraído de la guía original en PDF.</p>
-    </div>
-  </article> <!-- AQUÍ CIERRA EL ARTÍCULO DE RUTA TI -->
+ const savedTheme = localStorage.getItem('theme');
+ if (savedTheme === 'dark') {
+ body.classList.add('dark-mode');
+ toggleButton.textContent = 'Modo Claro ☀';
+ } else {
+ body.classList.remove('dark-mode');
+ toggleButton.textContent = 'Modo Oscuro 🌙';
+ }
 
-</div> <!-- AQUÍ CIERRA EL GRID DE PROYECTOS -->
+ toggleButton.addEventListener('click', () => {
+ body.classList.toggle('dark-mode');
+ if (body.classList.contains('dark-mode')) {
+ toggleButton.textContent = 'Modo Claro ☀';
+ localStorage.setItem('theme', 'dark');
+ } else {
+ toggleButton.textContent = 'Modo Oscuro 🌙';
+ localStorage.setItem('theme', 'light');
+ }
+ });
 
-<!-- Simulador ATS Interactivo Independiente (Fuera de las tarjetas de proyectos) -->
-<div class="ats-box" style="background: var(--card-bg, rgba(255,255,255,0.05)); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); margin-top: 25px;">
-  <h4 style="margin-top: 0; margin-bottom: 10px; font-size: 15px; color: inherit;"> Pon a prueba tu CV ante el algoritmo ⚡</h4>
-  <p style="font-size: 13px; opacity: 0.8; margin-bottom: 12px;">Pega las tecnologías principales que aparecen en tu currículum (separadas por comas):</p>
+ document.getElementById('btn-scan').addEventListener('click', function() {
+ const input = document.getElementById('ats-skills').value.trim();
+ const resultDiv = document.getElementById('ats-result');
+ const scoreSpan = document.getElementById('ats-score');
+ const barDiv = document.getElementById('ats-bar');
+ const feedbackP = document.getElementById('ats-feedback');
  
-  <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-    <input type="text" id="ats-skills" placeholder="Ej: HTML5, Git, Docker, Python, React..." style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color, rgba(255,255,255,0.2)); background: rgba(0,0,0,0.05); color: inherit; font-size: 14px;">
-    <button id="btn-scan" class="btn" style="margin: 0; padding: 10px 20px; font-size: 14px;" data-umami-event="Escanear CV ATS">Escanear Perfil</button>
-  </div>
+ if (!input) {
+ alert('Por favor, introduce algunas tecnologías para evaluar tu perfil.');
+ return;
+ }
+ const userSkills = input.toLowerCase().split(',').map(s => s.trim()).filter(s => s.length > 0);
+ 
+ const criticalSkills = ['git', 'github', 'html', 'css', 'javascript', 'js', 'docker', 'linux', 'aws', 'python', 'ci/cd', 'api'];
+ const softSkills = ['agile', 'scrum', 'comunicacion', 'documentacion', 'testing'];
+ let score = 20; 
+ userSkills.forEach(skill => {
+ if (criticalSkills.includes(skill)) { score += 10; } 
+ else if (softSkills.includes(skill)) { score += 5; } 
+ else { score += 2; }
+ });
+ score = Math.min(score, 100);
+ resultDiv.style.display = 'block';
+ 
+ scoreSpan.innerText = '0%';
+ barDiv.style.width = '0%';
+ 
+ setTimeout(() => {
+ scoreSpan.innerText = score + '%';
+ barDiv.style.width = score + '%';
+ if (score < 50) {
+ barDiv.style.background = '#f44336';
+ scoreSpan.style.color = '#f44336';
+ feedbackP.innerHTML = '<b>Perfil Crítico ante el ATS:</b> Revisa la guía en PDF para optimizarlo.';
+ } else if (score >= 50 && score < 80) {
+ barDiv.style.background = '#ff9800';
+ scoreSpan.style.color = '#ff9800';
+ feedbackP.innerHTML = '<b>Perfil Aceptable pero con Riesgo:</b> ¡Añade más fundamentos!';
+ } else {
+ barDiv.style.background = '#4caf50';
+ scoreSpan.style.color = '#4caf50';
+ feedbackP.innerHTML = '<b>¡Perfil Optimizado para el Éxito!:</b> Excelente densidad de palabras clave.';
+ }
+ }, 100);
+ });
 
-  <div id="ats-result" style="display: none; font-size: 14px;">
-    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
-      <span style="font-size: 18px; font-weight: bold;">Compatibilidad ATS:</span>
-      <span id="ats-score" style="font-size: 22px; font-weight: bold; color: #4caf50;">0%</span>
-    </div>
-    <div style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 12px;">
-      <div id="ats-bar" style="width: 0%; background: #4caf50; height: 100%; transition: width 0.8s ease;"></div>
-    </div>
-    <p id="ats-feedback" style="font-size: 13px; opacity: 0.9; margin: 0; line-height: 1.4;"></p>
-  </div>
-</div>
+ if ('serviceWorker' in navigator) {
+ window.addEventListener('load', () => {
+ navigator.serviceWorker.register('./sw.js').catch(err => console.error(err));
+ });
+ }
+ const words = ["Investigador MCX", "Desplegando Redes 5G", "Sistemas Resilientes", "Orquestación IA Local"];
+ let wordIndex = 0;
+ let charIndex = 0;
+ let isDeleting = false;
+ const typingElement = document.getElementById("typing-text");
 
+ function type() {
+ const currentWord = words[wordIndex];
+ if (isDeleting) {
+ typingElement.textContent = currentWord.substring(0, charIndex - 1);
+ charIndex--;
+ } else {
+ typingElement.textContent = currentWord.substring(0, charIndex + 1);
+ charIndex++;
+ }
+ if (!isDeleting && charIndex === currentWord.length) {
+ isDeleting = true;
+ setTimeout(type, 2000);
+ } else if (isDeleting && charIndex === 0) {
+ isDeleting = false;
+ wordIndex = (wordIndex + 1) % words.length;
+ setTimeout(type, 500);
+ } else {
+ setTimeout(type, isDeleting ? 50 : 100);
+ }
+ }
+ document.addEventListener("DOMContentLoaded", () => { if (typingElement) setTimeout(type, 1000); });
 
-          <!-- Botón Desplegable para Leer la Guía Nátiva -->
-<button id="btn-toggle-guia" class="btn" style="margin-top: 15px; width: 100%; background: var(--border-color, rgba(255,255,255,0.1)); color: inherit; border: 1px solid var(--border-color, rgba(255,255,255,0.2)); cursor: pointer;" data-umami-event="Desplegar Guia Ruta TI">
-  📖 Leer Resumen Técnico de la Guía
-</button>
-
-<!-- Contenedor Oculto de la Guía (Acordeón) -->
-<div id="guia-content" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.1); border-radius: 8px; border-left: 3px solid #2ea44f; animation: fadeIn 0.3s ease;">
-  <h4 style="margin: 0 0 10px 0; font-size: 15px; color: inherit;">🗺️ La Ruta TI del Candidato Tech</h4>
-  
-  <div style="font-size: 13px; line-height: 1.5; opacity: 0.9;">
-    <p style="margin: 0 0 10px 0;"><strong>1. El Filtro del Algoritmo (ATS):</strong> Las herramientas de reclutamiento escanean tu currículum buscando palabras clave específicas de ingeniería. Si tu perfil no tiene una densidad del 60-70% de las tecnologías demandadas, el sistema te descarta automáticamente antes de que un humano te lea.</p>
-    
-    <p style="margin: 0 0 10px 0;"><strong>2. Captar al Tech Lead en 10 segundos:</strong> Los líderes técnicos no buscan descripciones largas, buscan hechos. Estructura tu experiencia usando la metodología STAR (Situación, Tarea, Acción, Resultado) y resalta el impacto tecnológico medible de tus proyectos.</p>
-    
-    <p style="margin: 0 0 10px 0;"><strong>3. El Control de Versiones es Rey:</strong> Para un perfil junior o estudiante, un perfil de GitHub activo y con commits estructurados (siguiendo estándares como <i>Conventional Commits</i>) demuestra más experiencia real que cualquier título teórico.</p>
-  </div>
-  
-  <p style="font-size: 12px; opacity: 0.7; margin: 10px 0 0 0; text-align: right; font-style: italic;">Contenido extraído de la guía original en PDF.</p>
-</div>
-                   
-                      
-        </article>
-        
-      </div> 
-    </section>
-       <!-- SECCIÓN DE TRANSPARENCIA Y SEGURIDAD (CONFIANZA UX) -->
-    <section style="margin-top: 40px; padding: 15px; background: rgba(0,0,0,0.05); border-radius: 8px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); text-align: left;">
-      <h4 style="margin: 0 0 8px 0; font-size: 14px; color: inherit; display: flex; align-items: center; gap: 6px;">
-        🛡️ Compromiso de Seguridad y Privacidad
-      </h4>
-      <p style="font-size: 12px; margin: 0; opacity: 0.85; line-height: 1.5;">
-        Este laboratorio está construido bajo estándares estrictos de la industria tecnológica. Tanto el simulador ATS como la opción de instalación de la aplicación operan de forma nativa en tu navegador en un entorno seguro aislado (<i>sandbox</i>). <strong>No se descargan archivos ejecutables</strong> en tu dispositivo, no se recopilan datos personales y las analíticas son 100% respetuosas con tu privacidad gracias al motor de Umami. Explora, prueba e instala con total tranquilidad.
-      </p>
-    </section>
-       
-            <footer>
-            <a href="https://www.linkedin.com/in/luis-miguel-galacho" target="_blank" class="btn" style="margin-top: 30px;" data-umami-event="Click LinkedIn">Conectar en LinkedIn</a>
-            <a href="https://lmgch.github.io/grazalema-resiliente/" target="_blank" class="btn" style="margin-top: 30px;" data-umami-event="Click Grazalema Resiliente">Web de Grazalema Resiliente</a>              
-            </footer>
-          </article>
-    </main>
-<!-- El contenedor ahora maneja la posición fija en la pantalla -->
-<div class="pwa-container">
-  <!-- El botón solo tiene los estilos visuales (color, bordes, etc.) -->
-  <button id="pwa-install-btn" style="display: none;" data-umami-event=" Instalar App PWA">
-    📲 Instalar App
-  </button>
-</div>
-  
-    <script>
-            const toggleButton = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        // 1. Al cargar la página, comprobamos si el usuario ya había elegido el modo oscuro antes
-        const savedTheme = localStorage.getItem('theme');
-
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
-            toggleButton.textContent = '☀️ Modo Claro';
-        } else {
-            body.classList.remove('dark-mode');
-            toggleButton.textContent = '🌙 Modo Oscuro';
-        }
-
-        // 2. Escuchamos el clic del botón para cambiar el modo y guardar la decisión
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            // Comprobamos qué modo se acaba de activar y lo guardamos en la memoria del navegador
-            if (body.classList.contains('dark-mode')) {
-                toggleButton.textContent = '☀️ Modo Claro';
-                localStorage.setItem('theme', 'dark'); // Guarda "dark"
-            } else {
-                toggleButton.textContent = '🌙 Modo Oscuro';
-                localStorage.setItem('theme', 'light'); // Guarda "light"
-            }
-        });
-      // --- MOTOR DEL EVALUADOR ATS (RUTA TI) ---
-document.getElementById('btn-scan').addEventListener('click', function() {
-  const input = document.getElementById('ats-skills').value.trim();
-  const resultDiv = document.getElementById('ats-result');
-  const scoreSpan = document.getElementById('ats-score');
-  const barDiv = document.getElementById('ats-bar');
-  const feedbackP = document.getElementById('ats-feedback');
-  
-  if (!input) {
-    alert('Por favor, introduce algunas tecnologías para evaluar tu perfil.');
-    return;
-  }
-
-  // Convertimos la entrada a minúsculas y limpiamos espacios
-  const userSkills = input.toLowerCase().split(',').map(s => s.trim()).filter(s => s.length > 0);
-  
-  // Base de palabras clave críticas y recomendadas que buscan los Tech Leads
-  const criticalSkills = ['git', 'github', 'html', 'css', 'javascript', 'js', 'docker', 'linux', 'aws', 'python', 'ci/cd', 'api'];
-  const softSkills = ['agile', 'scrum', 'comunicacion', 'documentacion', 'testing'];
-
-  let score = 20; // Puntuación base por tener un perfil técnico limpio
-  let matches = [];
-
-  userSkills.forEach(skill => {
-    if (criticalSkills.includes(skill)) {
-      score += 10;
-      matches.push(skill.toUpperCase());
-    } else if (softSkills.includes(skill)) {
-      score += 5;
-    } else {
-      score += 2; // Tecnologías extra no listadas
-    }
-  });
-
-  // Limitamos el score máximo a 100% y mínimo a 20%
-  score = Math.min(score, 100);
-
-  // Mostramos el contenedor de resultados
-  resultDiv.style.display = 'block';
-  
-  // Animación del contador de progreso
-  scoreSpan.innerText = '0%';
-  barDiv.style.width = '0%';
-  
-  setTimeout(() => {
-    scoreSpan.innerText = score + '%';
-    barDiv.style.width = score + '%';
-    
-    // Cambiar color de la barra según puntuación
-    if (score < 50) {
-      barDiv.style.background = '#f44336'; // Rojo
-      scoreSpan.style.color = '#f44336';
-      feedbackP.innerHTML = '❌ <b>Perfil Crítico ante el ATS:</b> Tu CV carece de palabras clave estructurales básicas (como control de versiones Git o fundamentos web). El software de reclutamiento podría descartarte de forma automática antes de llegar al Tech Lead. Revisa la guía en PDF para optimizarlo.';
-    } else if (score >= 50 && score < 80) {
-      barDiv.style.background = '#ff9800'; // Naranja
-      scoreSpan.style.color = '#ff9800';
-      feedbackP.innerHTML = '⚠️ <b>Perfil Aceptable pero con Riesgo:</b> Superas los filtros iniciales básicos, pero te faltan tecnologías core altamente demandadas en el mercado actual para destacar entre la masa. ¡Añade más fundamentos de arquitectura o despliegue!';
-    } else {
-      barDiv.style.background = '#4caf50'; // Verde
-      scoreSpan.style.color = '#4caf50';
-      feedbackP.innerHTML = '✅ <b>¡Perfil Optimizado para el Éxito!:</b> Excelente densidad de palabras clave técnicas. Tienes una probabilidad altísima de superar las cribas automatizadas de recursos humanos y captar el interés directo de los equipos de ingeniería.';
-    }
-  }, 100);
-});
-
-    </script>
-  <!-- Registro del Service Worker para Resiliencia Offline -->
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-        .then(reg => console.log('✅ Service Worker registrado con éxito:', reg.scope))
-        .catch(err => console.error('❌ Error al registrar el Service Worker:', err));
-    });
-  }
-  // --- MOTOR DE TEXTO MECANOGRAFIADO (HERO BANNER) ---
-const words = ["Investigador MCX", "Desplegando Redes 5G", "Sistemas Resilientes", "Orquestación IA Local"];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typingDelay = 100;
-const erasingDelay = 50;
-const newWordDelay = 2000; // Tiempo que se queda la palabra escrita en pantalla
-const typingElement = document.getElementById("typing-text");
-
-function type() {
-  const currentWord = words[wordIndex];
-  
-  if (isDeleting) {
-    // Borrando caracteres
-    typingElement.textContent = currentWord.substring(0, charIndex - 1);
-    charIndex--;
-  } else {
-    // Escribiendo caracteres
-    typingElement.textContent = currentWord.substring(0, charIndex + 1);
-    charIndex++;
-  }
-
-  if (!isDeleting && charIndex === currentWord.length) {
-    // Ha terminado de escribir la palabra completa
-    isDeleting = true;
-    setTimeout(type, newWordDelay);
-  } else if (isDeleting && charIndex === 0) {
-    // Ha terminado de borrar la palabra
-    isDeleting = false;
-    wordIndex = (wordIndex + 1) % words.length; // Pasa a la siguiente palabra
-    setTimeout(type, 500);
-  } else {
-    // Continúa el ciclo de escritura o borrado
-    setTimeout(type, isDeleting ? erasingDelay : typingDelay);
-  }
-}
-
-// Inicializar la animación al cargar la página
-document.addEventListener("DOMContentLoaded", () => {
-  if (typingElement) setTimeout(type, 1000);
-});
-// --- CONTROL DEL DESPLEGABLE DE LA RUTA TI ---
-document.getElementById('btn-toggle-guia').addEventListener('click', function() {
-  const content = document.getElementById('guia-content');
-  const btn = document.getElementById('btn-toggle-guia');
-  
-  if (content.style.display === 'none') {
-    content.style.display = 'block';
-    btn.innerHTML = '❌ Cerrar Resumen Técnico';
-  } else {
-    content.style.display = 'none';
-    btn.innerHTML = '📖 Leer Resumen Técnico de la Guía';
-  }
-});
-// --- MOTOR DE INSTALACIÓN PWA ---
-let deferredPrompt;
-const installBtn = document.getElementById('pwa-install-btn');
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevenimos que el navegador muestre su barra nativa por defecto
-  e.preventDefault();
-  // Guardamos el evento para ejecutarlo cuando el usuario pulse nuestro botón
-  deferredPrompt = e;
-  // Hacemos visible nuestro botón flotante verde en la esquina izquierda
-  if (installBtn) {
-    installBtn.style.display = 'block';
-  }
-});
-
-if (installBtn) {
-  installBtn.addEventListener('click', async () => {
-    if (!deferredPrompt) return;
-    
-    // Mostramos la ventana nativa de confirmación de instalación
-    deferredPrompt.prompt();
-    
-    // Esperamos a que el usuario responda (Acepte o Cancele)
-    const { outcome } = await deferredPrompt.userChoice;
-    console.log(`User response to the install prompt: ${outcome}`);
-    
-    // Limpiamos la variable, ya no se puede volver a usar este prompt
-    deferredPrompt = null;
-    // Ocultamos el botón ya que la app se está instalando
-    installBtn.style.display = 'none';
-  });
-}
-
-// Ocultar el botón automáticamente si la app ya ha sido instalada con éxito
-window.addEventListener('appinstalled', () => {
-  console.log('🎉 PWA instalada con éxito en el dispositivo.');
-  if (installBtn) {
-    installBtn.style.display = 'none';
-  }
-});
-  
-</script>
+ document.getElementById('btn-toggle-guia').addEventListener('click', function() {
+ const content = document.getElementById('guia-content');
+ const btn = document.getElementById('btn-toggle-guia');
+ if (content.style.display === 'none') {
+ content.style.display = 'block';
+ btn.innerHTML = 'Cerrar Resumen Técnico ❌';
+ } else {
+ content.style.display = 'none';
+ btn.innerHTML = 'Leer Resumen Técnico de la Guía 📖';
+ }
+ });
+ </script>
 </body>
 </html>
