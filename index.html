@@ -474,11 +474,27 @@ html {
   </div>
 </article> <!-- AQUÍ CIERRA EL ARTÍCULO DE RUTA TI -->
 
-<!-- Pega aquí la caja del simulador ATS, JUSTO FUERA, para que sea hermana de las demás secciones -->
-<div class="ats-box" style="background: var(--card-bg, rgba(255,255,255,0.05)); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); margin-top: 25px;">
-  <h4 style="margin-top: 0; margin-bottom: 10px; font-size: 15px; color: inherit;"> Pon a prueba tu CV ante el algoritmo</h4> ⚡
-  <!-- Resto del contenido interno de tu simulador ATS (inputs, botón, resultados)... -->
-</div>
+<!-- Simulador ATS Interactivo -->
+        <div class="ats-box" style="background: var(--card-bg, rgba(255,255,255,0.05)); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); margin-top: 15px;">
+            <h4 style="margin-top: 0; margin-bottom: 10px; font-size: 15px; color: inherit;">⚡ Pon a prueba tu CV ante el algoritmo</h4>
+            <p style="font-size: 13px; opacity: 0.8; margin-bottom: 12px;">Pega las tecnologías principales que aparecen en tu currículum (separadas por comas):</p>
+            
+            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+              <input type="text" id="ats-skills" placeholder="Ej: HTML5, Git, Docker, Python, React..." style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color, rgba(255,255,255,0.2)); background: rgba(0,0,0,0.05); color: inherit; font-size: 14px;">
+              <button id="btn-scan" class="btn" style="margin: 0; padding: 10px 20px; font-size: 14px;" data-umami-event="Escanear CV ATS">Escanear Perfil</button>
+            </div>
+
+            <div id="ats-result" style="display: none; font-size: 14px;">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                <span style="font-size: 18px; font-weight: bold;">Compatibilidad ATS:</span>
+                <span id="ats-score" style="font-size: 22px; font-weight: bold; color: #4caf50;">0%</span>
+              </div>
+              <div style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 12px;">
+                <div id="ats-bar" style="width: 0%; background: #4caf50; height: 100%; transition: width 0.8s ease;"></div>
+              </div>
+              <p id="ats-feedback" style="font-size: 13px; opacity: 0.9; margin: 0; line-height: 1.4;"></p>
+            </div>
+          </div>
 
           <!-- Botón Desplegable para Leer la Guía Nátiva -->
 <button id="btn-toggle-guia" class="btn" style="margin-top: 15px; width: 100%; background: var(--border-color, rgba(255,255,255,0.1)); color: inherit; border: 1px solid var(--border-color, rgba(255,255,255,0.2)); cursor: pointer;" data-umami-event="Desplegar Guia Ruta TI">
