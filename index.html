@@ -438,58 +438,66 @@ html {
             <!-- Sección Semántica de Proyectos -->
             <section id="proyectos" aria-labelledby="titulo-proyectos" style="margin-top: 50px;">
             <h2 id="proyectos" style="font-size: 18px; margin-top: 25px; text-align: left; color: inherit;">📁 Proyectos Recientes</h2>
-         <div class="projects-grid">     
-               
-                    <article class="project-card">
-                    <h3>🚀 Grazalema Resiliente</h3>
-                    <p>Un proyecto desarrollado en HTML centrado en la resiliencia y gestión de datos locales.</p>
-                    <a href="https://github.com/LMGCH/grazalema-resiliente" target="_blank" class="project-link" data-umami-event="Click Proyecto Grazalema">Ver repositorio ↗</a>
-                    </article>                    
-                
-                    <article class="project-card">
-                    <h3>💻 Mi Web Personal</h3>
-                    <p>Este mismo CV dinámico desarrollado desde cero para documentar mi evolución tech.</p>
-                    <a href="https://github.com/LMGCH/LMGCH.github.io" target="_blank" class="project-link" data-umami-event="Click Codigo Web Personal">Ver código fuente ↗</a>
-                    </article>    
-                   
-            <!-- ... Resto de tus proyectos anteriores ... -->
+         <div class="projects-grid"> 
+ 
+  <article class="project-card">
+    <h3> Grazalema Resiliente</h3> 🚀
+    <p>Un proyecto desarrollado en HTML centrado en la resiliencia y gestión de datos locales.</p>
+    <a href="https://github.com" target="_blank" class="project-link" data-umami-event="Click Proyecto Grazalema">Ver repositorio </a> ↗
+  </article> 
+ 
+  <article class="project-card">
+    <h3> Mi Web Personal</h3> 💻
+    <p>Este mismo CV dinámico desarrollado desde cero para documentar mi evolución tech.</p>
+    <a href="https://github.com" target="_blank" class="project-link" data-umami-event="Click Codigo Web Personal">Ver código fuente </a> ↗
+  </article> 
+ 
+  <article class="project-card" style="grid-column: 1 / -1; text-align: left;">
+    <h3>Creador de proyecto Ruta TI </h3> 📄
+    <p>La Ruta TI del Candidato Tech: Cómo estructurar tu perfil para superar la criba del ATS y llegar al Tech Lead.</p>
+    <a href="https://google.com" target="_blank" class="project-link" style="display:inline-block; margin-bottom: 15px;" data-umami-event="Descarga PDF Ruta TI">Descargar PDF Original (Google Drive) </a> 📥 ↗
+ 
+    <!-- Botón Desplegable Único para Leer la Guía Nátiva -->
+    <button id="btn-toggle-guia" class="btn" style="margin-top: 15px; width: 100%; background: var(--border-color, rgba(255,255,255,0.1)); color: inherit; border: 1px solid var(--border-color, rgba(255,255,255,0.2)); cursor: pointer;" data-umami-event="Desplegar Guia Ruta TI">
+      Leer Resumen Técnico de la Guía 📖
+    </button>
 
-<article class="project-card" style="grid-column: 1 / -1; text-align: left;">
-  <h3>Creador de proyecto Ruta TI </h3> 📄
-  <p>La Ruta TI del Candidato Tech: Cómo estructurar tu perfil para superar la criba del ATS y llegar al Tech Lead.</p>
-  <a href="https://drive.google.com/file/d/16PSz4gvdJKmxCh8mskOyeKBB37Ib60m7/view?usp=sharing" target="_blank" class="project-link" style="display:inline-block; margin-bottom: 15px;" data-umami-event="Descarga PDF Ruta TI">Descargar PDF Original (Google Drive) </a> 📥 ↗
-  
-  <!-- Botón Desplegable para Leer la Guía Nátiva -->
-  <button id="btn-toggle-guia" class="btn" style="margin-top: 15px; width: 100%; background: var(--border-color, rgba(255,255,255,0.1)); color: inherit; border: 1px solid var(--border-color, rgba(255,255,255,0.2)); cursor: pointer;" data-umami-event="Desplegar Guia Ruta TI">
-   Leer Resumen Técnico de la Guía 📖
-  </button>
-  <!-- Contenedor Oculto de la Guía (Acordeón) -->
-  <div id="guia-content" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.1); border-radius: 8px; border-left: 3px solid #2ea44f; animation: fadeIn 0.3s ease;">
-     <!-- Contenido de tu guía... -->
+    <!-- Contenedor Oculto Único de la Guía (Acordeón) -->
+    <div id="guia-content" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.1); border-radius: 8px; border-left: 3px solid #2ea44f; animation: fadeIn 0.3s ease;">
+      <h4 style="margin: 0 0 10px 0; font-size: 15px; color: inherit;"> La Ruta TI 🗺 del Candidato Tech</h4>
+      <div style="font-size: 13px; line-height: 1.5; opacity: 0.9;">
+        <p style="margin: 0 0 10px 0;"><strong>1. El Filtro del Algoritmo (ATS):</strong> Las herramientas de reclutamiento escanean tu currículum buscando palabras clave específicas de ingeniería. Si tu perfil no tiene una densidad del 60-70% de las tecnologías demandadas, el sistema te descarta automáticamente antes de que un humano te lea.</p>
+        <p style="margin: 0 0 10px 0;"><strong>2. Captar al Tech Lead en 10 segundos:</strong> Los líderes técnicos no buscan descripciones largas, buscan hechos. Estructura tu experiencia usando la metodología STAR (Situación, Tarea, Acción, Resultado) y resalta el impacto tecnológico medible de tus proyectos.</p>
+        <p style="margin: 0 0 10px 0;"><strong>3. El Control de Versiones es Rey:</strong> Para un perfil junior o estudiante, un perfil de GitHub activo y con commits estructurados (siguiendo estándares como <i>Conventional Commits</i>) demuestra más experiencia real que cualquier título teórico.</p>
+      </div>
+      <p style="font-size: 12px; opacity: 0.7; margin: 10px 0 0 0; text-align: right; font-style: italic;">Contenido extraído de la guía original en PDF.</p>
+    </div>
+  </article> <!-- AQUÍ CIERRA EL ARTÍCULO DE RUTA TI -->
+
+</div> <!-- AQUÍ CIERRA EL GRID DE PROYECTOS -->
+
+<!-- Simulador ATS Interactivo Independiente (Fuera de las tarjetas de proyectos) -->
+<div class="ats-box" style="background: var(--card-bg, rgba(255,255,255,0.05)); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); margin-top: 25px;">
+  <h4 style="margin-top: 0; margin-bottom: 10px; font-size: 15px; color: inherit;"> Pon a prueba tu CV ante el algoritmo ⚡</h4>
+  <p style="font-size: 13px; opacity: 0.8; margin-bottom: 12px;">Pega las tecnologías principales que aparecen en tu currículum (separadas por comas):</p>
+ 
+  <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+    <input type="text" id="ats-skills" placeholder="Ej: HTML5, Git, Docker, Python, React..." style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color, rgba(255,255,255,0.2)); background: rgba(0,0,0,0.05); color: inherit; font-size: 14px;">
+    <button id="btn-scan" class="btn" style="margin: 0; padding: 10px 20px; font-size: 14px;" data-umami-event="Escanear CV ATS">Escanear Perfil</button>
   </div>
-</article> <!-- AQUÍ CIERRA EL ARTÍCULO DE RUTA TI -->
 
-<!-- Simulador ATS Interactivo -->
-        <div class="ats-box" style="background: var(--card-bg, rgba(255,255,255,0.05)); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); margin-top: 15px;">
-            <h4 style="margin-top: 0; margin-bottom: 10px; font-size: 15px; color: inherit;">⚡ Pon a prueba tu CV ante el algoritmo</h4>
-            <p style="font-size: 13px; opacity: 0.8; margin-bottom: 12px;">Pega las tecnologías principales que aparecen en tu currículum (separadas por comas):</p>
-            
-            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-              <input type="text" id="ats-skills" placeholder="Ej: HTML5, Git, Docker, Python, React..." style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color, rgba(255,255,255,0.2)); background: rgba(0,0,0,0.05); color: inherit; font-size: 14px;">
-              <button id="btn-scan" class="btn" style="margin: 0; padding: 10px 20px; font-size: 14px;" data-umami-event="Escanear CV ATS">Escanear Perfil</button>
-            </div>
+  <div id="ats-result" style="display: none; font-size: 14px;">
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+      <span style="font-size: 18px; font-weight: bold;">Compatibilidad ATS:</span>
+      <span id="ats-score" style="font-size: 22px; font-weight: bold; color: #4caf50;">0%</span>
+    </div>
+    <div style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 12px;">
+      <div id="ats-bar" style="width: 0%; background: #4caf50; height: 100%; transition: width 0.8s ease;"></div>
+    </div>
+    <p id="ats-feedback" style="font-size: 13px; opacity: 0.9; margin: 0; line-height: 1.4;"></p>
+  </div>
+</div>
 
-            <div id="ats-result" style="display: none; font-size: 14px;">
-              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
-                <span style="font-size: 18px; font-weight: bold;">Compatibilidad ATS:</span>
-                <span id="ats-score" style="font-size: 22px; font-weight: bold; color: #4caf50;">0%</span>
-              </div>
-              <div style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 12px;">
-                <div id="ats-bar" style="width: 0%; background: #4caf50; height: 100%; transition: width 0.8s ease;"></div>
-              </div>
-              <p id="ats-feedback" style="font-size: 13px; opacity: 0.9; margin: 0; line-height: 1.4;"></p>
-            </div>
-          </div>
 
           <!-- Botón Desplegable para Leer la Guía Nátiva -->
 <button id="btn-toggle-guia" class="btn" style="margin-top: 15px; width: 100%; background: var(--border-color, rgba(255,255,255,0.1)); color: inherit; border: 1px solid var(--border-color, rgba(255,255,255,0.2)); cursor: pointer;" data-umami-event="Desplegar Guia Ruta TI">
