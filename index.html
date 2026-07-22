@@ -451,9 +451,10 @@ body {
  </article>
  </main>
 
- <div class="pwa-container">
- <button id="pwa-install-btn" style="display: none;" data-umami-event="Instalar App PWA">Instalar App 📲</button>
- </div>
+   <!-- Contenedor PWA Corregido -->
+  <div class="pwa-container">
+    <button id="pwa-install-btn" data-umami-event="Instalar App PWA">Instalar App 📲</button>
+  </div>
  
  <script>
  const toggleButton = document.getElementById('theme-toggle');
@@ -530,6 +531,45 @@ body {
  navigator.serviceWorker.register('./sw.js').catch(err => console.error(err));
  });
  }
+   // Lógica nativa para capturar la instalación de la PWA
+  let deferredPrompt;
+  const pwaBtn = document.getElementById('pwa-install-btn');
+
+  // Ocultamos el botón inicialmente de forma limpia mediante JS si no es instalable
+  if (pwaBtn) pwaBtn.style.display = 'none';
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // Previene la barra emergente por defecto del navegador móvil
+    e.preventDefault();
+    // Guarda el evento para que se dispare cuando el usuario pulse tu botón
+    deferredPrompt = e;
+    // Muestra tu botón personalizado con estilo para que reluzca en el móvil
+    if (pwaBtn) pwaBtn.style.display = 'block';
+  });
+
+  if (pwaBtn) {
+    pwaBtn.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      // Muestra el prompt nativo de instalación de Android/Chrome
+      deferredPrompt.prompt();
+      // Esperamos a ver si el usuario acepta o cancela la instalación
+      const { outcome } = await deferredPrompt.userChoice;
+      
+      // Enviamos eventos dinámicos a Umami según lo que decida el usuario móvil
+      if (typeof umami !== 'undefined') {
+        umami.track('Instalación PWA', { resultado: outcome });
+      }
+      
+      deferredPrompt = null;
+      pwaBtn.style.display = 'none';
+    });
+  }
+
+  // Oculta el botón automáticamente si la app ya está instalada en el dispositivo
+  window.addEventListener('appinstalled', (evt) => {
+    if (pwaBtn) pwaBtn.style.display = 'none';
+    console.log('¡PWA instalada con éxito por el usuario!');
+  });
  const words = ["Investigador MCX", "Desplegando Redes 5G", "Sistemas Resilientes", "Orquestación IA Local"];
  let wordIndex = 0;
  let charIndex = 0;
