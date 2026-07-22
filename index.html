@@ -314,12 +314,17 @@ body {
  .nav-links a {
  margin: 0;
  }
+ /* NUEVA CONFIGURACIÓN PARA EL BOTÓN EN MÓVIL VERTICAL */
  .theme-btn {
- top: auto;
- bottom: 20px;
- right: 20px;
+ top: 12px; /* Lo situamos arriba de forma segura */
+ bottom: auto; /* Cancelamos el bottom anterior */
+ right: 12px; /* Pegado a la derecha */
+ padding: 6px 10px; /* Un tamaño ligeramente más compacto para pantallas estrechas */
+ font-size: 12px;
+ z-index: 200000; /* Aseguramos que flote por encima de la barra fija de navegación */
  }
  } 
+
  </style>
 </head>
 <body>
