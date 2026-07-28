@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elastic Observability Simulation</title>
+    <script src="https://tailwindcss.com"></script>
+    <script src="https://jsdelivr.net"></script>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        body { background-color: #11131c; color: #dfe5ef; font-family: Inter, system-ui, sans-serif; }
+        .elastic-card { background-color: #1d1f2c; border: 1px solid #2e3142; border-radius: 6px; }
+        .elastic-border { border-color: #2e3142; }
+        .text-elastic-green { color: #01d4b4; }
+        .bg-elastic-blue { background-color: #006de4; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #11131c; }
+        ::-webkit-scrollbar-thumb { background: #2e3142; border-radius: 3px; }
+    </style>
+</head>
+<body class="p-6">
+
+    <!-- Top Navigation Simulation -->
+    <div class="flex flex-wrap justify-between items-center pb-4 mb-6 elastic-border border-b gap-4">
+        <div class="flex items-center space-x-3">
+            <div class="bg-elastic-blue text-white p-2 rounded font-bold text-sm">E</div>
+            <div>
+                <h1 class="text-lg font-semibold tracking-tight">Observability Labs</h1>
+                <p class="text-xs text-gray-400">Simulación de Panel de Control / Servicios Corporativos</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-2 bg-[#1d1f2c] px-3 py-1.5 rounded border elastic-border text-sm">
+            <i class="fa-regular fa-calendar text-gray-400"></i>
+            <span class="font-mono text-xs">Últimos 15 minutos</span>
+            <span class="w-2 h-2 rounded-full bg-elastic-green animate-pulse ml-2"></span>
+        </div>
+    </div>
+
+    <!-- KQL Search Bar -->
+    <div class="flex items-center bg-[#1d1f2c] border elastic-border rounded p-2 mb-6 shadow-inner">
+        <i class="fa-solid fa-magnifying-glass text-gray-500 mx-2"></i>
+        <input type="text" value="service.name : 'ecommerce-gateway' and http.response.status_code >= 400" 
+               class="bg-transparent text-sm w-full focus:outline-none font-mono text-blue-400" readonly>
+        <span class="bg-[#2e3142] text-xs px-2 py-1 rounded text-gray-300 font-mono">KQL</span>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        
+        <!-- KPI Card 1 -->
+        <div class="elastic-card p-4 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+                <span class="text-xs font-medium text-gray-400 uppercase tracking-wider">Latencia APM (P95)</span>
+                <i class="fa-solid fa-chart-line text-blue-400"></i>
+            </div>
+            <div class="my-4">
+                <span class="text-3xl font-bold font-mono tracking-tight" id="latency-val">124</span>
+                <span class="text-sm text-gray-400 ml-1">ms</span>
+            </div>
+            <div class="text-xs text-elastic-green flex items-center">
+                <i class="fa-solid fa-caret-down mr-1"></i> -4.2% vs última hora
+            </div>
+        </div>
+
+        <!-- KPI Card 2 -->
+        <div class="elastic-card p-4 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+                <span class="text-xs font-medium text-gray-400 uppercase tracking-wider">Tasa de Errores</span>
+                <i class="fa-solid fa-triangle-exclamation text-red-400"></i>
+            </div>
+            <div class="my-4">
+                <span class="text-3xl font-bold font-mono text-red-400 tracking-tight" id="error-val">0.08</span>
+                <span class="text-sm text-gray-400 ml-1">%</span>
+            </div>
+            <div class="text-xs text-red-400 flex items-center">
+                <i class="fa-solid fa-caret-up mr-1"></i> +0.01% anomalía detectada
+            </div>
+        </div>
+
+        <!-- KPI Card 3 -->
+        <div class="elastic-card p-4 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+                <span class="text-xs font-medium text-gray-400 uppercase tracking-wider">Rendimiento (Throughput)</span>
+                <i class="fa-solid fa-circle-nodes text-emerald-400"></i>
+            </div>
+            <div class="my-4">
+                <span class="text-3xl font-bold font-mono tracking-tight" id="rpm-val">1,420</span>
+                <span class="text-sm text-gray-400 ml-1">rpm</span>
+            </div>
+            <div class="text-xs text-elastic-green flex items-center">
+                <i class="fa-solid fa-caret-up mr-1"></i> +12.5% tráfico orgánico
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts & Logs Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Live Chart -->
+        <div class="elastic-card p-4 lg:col-span-2">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-sm font-semibold text-gray-300">Transacciones y Transiciones del Sistema</h3>
+                <span class="text-xs text-gray-500 font-mono">Actualización en vivo (1s)</span>
+            </div>
+            <div class="h-64 relative">
+                <canvas id="elasticLiveChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Live Log Stream -->
+        <div class="elastic-card p-4 flex flex-col">
+            <div class="flex justify-between items-center mb-3">
+                <h3 class="text-sm font-semibold text-gray-300">Stream de Logs Ingeridos</h3>
+                <i class="fa-solid fa-terminal text-gray-500 text-xs"></i>
+            </div>
+            <div id="log-container" class="flex-1 min-h-[16rem] lg:h-64 overflow-y-auto font-mono text-[11px] leading-relaxed bg-[#11131c] p-3 rounded border elastic-border space-y-2">
+                <!-- Logs injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripting for Simulation Layer -->
+    <script>
+        // Chart.js Configuration
+        const ctx = document.getElementById('elasticLiveChart').getContext('2d');
+        const labels = Array.from({length: 20}, (_, i) => `${i}s`);
+        const dataConfig = {
+            labels: labels,
+            datasets: [{
+                label: 'HTTP 200 (ms)',
+                data: Array.from({length: 20}, () => Math.floor(Math.random() * 40) + 80),
+                borderColor: '#006de4',
+                backgroundColor: 'rgba(0, 119, 244, 0.05)',
+                borderWidth: 2,
+                tension: 0.3,
+                fill: true,
+                pointRadius: 0
+            }]
+        };
+
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: dataConfig,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { color: '#2e3142' }, ticks: { display: false } },
+                    y: { grid: { color: '#2e3142' }, ticks: { color: '#9ca3af', font: { size: 10 } } }
+                }
+            }
+        });
+
+        // Logs and Numeric Simulation Generator
+        const services = ['auth-service', 'payment-api', 'cart-worker', 'frontend-ssr'];
+        const methods = ['GET', 'POST', 'DELETE', 'PUT'];
+        const paths = ['/api/v1/login', '/checkout/pay', '/cart/items', '/home'];
+        const logContainer = document.getElementById('log-container');
+
+        function addLog() {
+            const timestamp = new Date().toISOString().split('T')[1].slice(0,8);
+            const service = services[Math.floor(Math.random() * services.length)];
+            const method = methods[Math.floor(Math.random() * methods.length)];
+            const path = paths[Math.floor(Math.random() * paths.length)];
+            const status = Math.random() > 0.08 ? 200 : (Math.random() > 0.5 ? 500 : 404);
+            const statusColor = status === 200 ? 'text-emerald-400' : 'text-red-400';
+
+            const logLine = document.createElement('div');
+            logLine.className = 'border-b border-[#1d1f2c] pb-1';
+            logLine.innerHTML = `<span class="text-gray-500">[${timestamp}]</span> <span class="text-blue-400 font-semibold">${service}</span> <span class="text-purple-400">${method}</span> <span class="text-gray-300">${path}</span> -> <span class="${statusColor}">${status}</span>`;
+            
+            logContainer.appendChild(logLine);
+            logContainer.scrollTop = logContainer.scrollHeight;
+
+            if (logContainer.children.length > 30) {
+                logContainer.removeChild(logContainer.firstChild);
+            }
+        }
+
+        // Live Interval Updaters
+        setInterval(() => {
+            // Update chart data
+            chart.data.datasets[0].data.shift();
+            chart.data.datasets[0].data.push(Math.floor(Math.random() * 50) + 80);
+            chart.update();
+
+            // Update KPI values softly
+            document.getElementById('latency-val').innerText = Math.floor(Math.random() * 25) + 110;
+            document.getElementById('rpm-val').innerText = (Math.floor(Math.random() * 60) + 1390).toLocaleString();
+            
+            // Add a log
+            addLog();
+        }, 1000);
+    </script>
+</body>
+</html>
