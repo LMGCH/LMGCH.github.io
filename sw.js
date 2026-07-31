@@ -43,7 +43,10 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
 
   const url = new URL(event.request.url);
-
+// Ignorar protocolos no soportados por Cache API
+if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+    return;
+}
   // ¡EVITAMOS SU PETICIÓN! Si la petición va a LinkedIn, Google Drive o APIs externas, 
   // dejamos que el navegador la maneje de forma ordinaria sin interferir ni cachear.
   if (url.hostname.includes('linkedin.com') || url.hostname.includes('google.com') || url.hostname.includes('umami')) {
