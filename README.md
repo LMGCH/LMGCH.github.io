@@ -1,4 +1,4 @@
-# 🚀 LMGCH.dev | CV Interactivo & Portfolio Resiliente
+## 🚀 LMGCH.dev | CV Interactivo & Portfolio Resiliente
 
 <p align="center">
   <img src="./icon-192.png" alt="LMGCH Logo" width="80" height="80" style="border-radius: 12px;"/>
