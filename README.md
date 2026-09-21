@@ -101,6 +101,9 @@ Si deseas revisar mi código, conectar profesionalmente o proponer una colaborac
 * **LinkedIn:** [linkedin.com/in/luis-miguel-galacho](https://linkedin.com/in/luis-miguel-galacho)
 
 ---
+<p align="center">
+  <img src="./image_pta.png" alt="LMGCH Logo" width="90" height="120" style="border-radius: 12px;"/>
+</p>
 ## 🚀 ¡Próxima parada: mis prácticas de SMR en Málaga!
 
 Hola a todos. 
