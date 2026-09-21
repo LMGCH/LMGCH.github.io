@@ -84,12 +84,12 @@ Actualmente estoy orientando mi aprendizaje técnico de cara al futuro hacia:
 ---
 
 ## 🚀 Próximas Mejoras (Backlog)
-- [ ] 🌐 Internacionalización completa (ES/EN).
-- [ ] ⚡ Optimización extrema en Lighthouse (100/100).
-- [ ] 🎨 Accesibilidad avanzada bajo pautas WCAG.
-- [ ] 🧪 Tests unitarios automatizados para el motor ATS.
-- [ ] 🔄 Integración y despliegue continuo (CI/CD con GitHub Actions).
-- [ ] ✍️ Creación de un blog técnico nativo offline.
+*  🌐 Internacionalización completa (ES/EN).
+*  ⚡ Optimización extrema en Lighthouse (100/100).
+*  🎨 Accesibilidad avanzada bajo pautas WCAG.
+*  🧪 Tests unitarios automatizados para el motor ATS.
+*  🔄 Integración y despliegue continuo (CI/CD con GitHub Actions).
+*  ✍️ Creación de un blog técnico nativo offline.
 
 ---
 
@@ -111,14 +111,14 @@ Me apasiona la tecnología y mi objetivo es aportar valor desde el primer día e
 
 - [ ] 🛠️ Sistemas y Soporte: Windows/Windows Server, fundamentos de Active Directory y Linux.
 - [ ] 🌐 Redes y Conectividad: Redes TCP/IP y simulaciones con Cisco Packet Tracer.
-- [ ] - [ ] 💻 Hardware y Cloud: Virtualización, montaje, mantenimiento y resolución de incidencias.Condiciones clave:
+- [ ] 💻 Hardware y Cloud: Virtualización, montaje, mantenimiento y resolución de incidencias.Condiciones clave:
 - [ ] 📍 Ubicación: Málaga (con especial interés en TechPark / PTA o zonas conectadas).
 - [ ] 🕐 Horario: Jornada de mañana (aprox. 25h/semanales).
 - [ ] 🎓 Gestión: Convenio gestionado directamente por mi centro educativo.
 
 Si en tu empresa buscáis talento junior con ganas de aprender y sumar, o si trabajas en el sector tecnológico en Málaga y puedes echarme una mano compartiendo este post, ¡te lo agradecería muchísimo!
 
-- [ ] 📩El futuro del IT se construye en equipo. ¿Hablamos?
+*  📩El futuro del IT se construye en equipo. ¿Hablamos?
 
 #Málaga #TechParkMalaga #SMR #FP #FCT #PrácticasIT #Sistemas #Redes #Ciberseguridad #MalagaTech #SoporteIT
 
