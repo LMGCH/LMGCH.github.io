@@ -101,6 +101,29 @@ Si deseas revisar mi código, conectar profesionalmente o proponer una colaborac
 * **LinkedIn:** [linkedin.com/in/luis-miguel-galacho](https://linkedin.com/in/luis-miguel-galacho)
 
 ---
+🚀 ¡Próxima parada: mis prácticas de SMR en Málaga!
+
+Hola a todos. 
+
+Actualmente estoy cursando 2º de Sistemas Microinformáticos y Redes (SMR) en el CPIFP Alan Turing y busco una empresa en Málaga para realizar mis 500 horas de prácticas (FCT) a partir de marzo de 2027.
+
+Me apasiona la tecnología y mi objetivo es aportar valor desde el primer día en equipos de Soporte IT, Sistemas, Redes, Infraestructura o Ciberseguridad.Durante mi formación he adquirido sólida experiencia práctica en:
+
+🛠️ Sistemas y Soporte: Windows/Windows Server, fundamentos de Active Directory y Linux.
+🌐 Redes y Conectividad: Redes TCP/IP y simulaciones con Cisco Packet Tracer.
+💻 Hardware y Cloud: Virtualización, montaje, mantenimiento y resolución de incidencias.Condiciones clave:
+📍 Ubicación: Málaga (con especial interés en TechPark / PTA o zonas conectadas).
+🕐 Horario: Jornada de mañana (aprox. 25h/semanales).
+🎓 Gestión: Convenio gestionado directamente por mi centro educativo.
+
+Si en tu empresa buscáis talento junior con ganas de aprender y sumar, o si trabajas en el sector tecnológico en Málaga y puedes echarme una mano compartiendo este post, ¡te lo agradecería muchísimo!
+
+📩El futuro del IT se construye en equipo. ¿Hablamos?
+
+#Málaga #TechParkMalaga #SMR #FP #FCT #PrácticasIT #Sistemas #Redes #Ciberseguridad #MalagaTech #SoporteIT
+
+---
+
 
 <p align="center">
   <em>Si has llegado hasta aquí... ¡Muchas gracias por dedicar unos minutos a revisar mi trabajo! 🤝</em>
